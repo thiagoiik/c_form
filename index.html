@@ -44,28 +44,18 @@
 
         <!-- Wizard Navigation / Progress Indicator -->
         <div class="wizard-steps-indicator" id="steps-indicator">
-            <div class="step-segment active" data-step="1"><span class="step-num">1</span><span class="step-text">Diseño</span></div>
-            <div class="step-segment" data-step="2"><span class="step-num">2</span><span class="step-text">Datos</span></div>
-            <div class="step-segment" data-step="3"><span class="step-num">3</span><span class="step-text">Colores</span></div>
+            <div class="step-segment active" data-step="1"><span class="step-num">1</span><span class="step-text">Datos</span></div>
+            <div class="step-segment" data-step="2"><span class="step-num">2</span><span class="step-text">Colores</span></div>
+            <div class="step-segment" data-step="3"><span class="step-num">3</span><span class="step-text">Diseño</span></div>
             <div class="step-segment" data-step="4"><span class="step-num">4</span><span class="step-text">Previa</span></div>
             <div class="step-segment" data-step="5"><span class="step-num">5</span><span class="step-text">Enviar</span></div>
         </div>
 
         <!-- Wizard Panels Viewport -->
         <main class="wizard-viewport">
-            <!-- STEP 1: CATALOG -->
+            <!-- STEP 1: DYNAMIC FORM DATA -->
             <section class="wizard-panel active" id="panel-step-1">
-                <h2 class="panel-section-title">Paso 1: Elige tu Estilo Base</h2>
-                <p class="panel-section-desc">Desliza y selecciona la plantilla que mejor se adapte a tu marca personal.</p>
-                
-                <div class="catalog-grid" id="catalog-container">
-                    <!-- Cards will be dynamically injected by JS, representing the 14 proposals -->
-                </div>
-            </section>
-
-            <!-- STEP 2: DYNAMIC FORM DATA -->
-            <section class="wizard-panel" id="panel-step-2">
-                <h2 class="panel-section-title">Paso 2: Completa tu Información</h2>
+                <h2 class="panel-section-title">Paso 1: Completa tu Información</h2>
                 <p class="panel-section-desc">Escribe los detalles que se mostrarán en tu tarjeta de presentación digital.</p>
 
                 <form class="dynamic-editor-form" id="editor-form" onsubmit="return false;">
@@ -151,9 +141,9 @@
                 </form>
             </section>
 
-            <!-- STEP 3: LOGO & COLOR PALETTE -->
-            <section class="wizard-panel" id="panel-step-3">
-                <h2 class="panel-section-title">Paso 3: Identidad Visual y Colores</h2>
+            <!-- STEP 2: LOGO & COLOR PALETTE -->
+            <section class="wizard-panel" id="panel-step-2">
+                <h2 class="panel-section-title">Paso 2: Identidad Visual y Colores</h2>
                 <p class="panel-section-desc">Sube tu logo para extraer su paleta, o selecciona el rubro de tu negocio para autogenerar los colores.</p>
 
                 <!-- Logo Color Extractor -->
@@ -216,6 +206,16 @@
                     <div class="color-pickers-grid" id="manual-color-pickers">
                         <!-- Color inputs dynamically loaded according to selected template requirements -->
                     </div>
+                </div>
+            </section>
+
+            <!-- STEP 3: CATALOG -->
+            <section class="wizard-panel" id="panel-step-3">
+                <h2 class="panel-section-title">Paso 3: Elige tu Estilo Base</h2>
+                <p class="panel-section-desc">Desliza y selecciona la plantilla que mejor se adapte a tu marca personal. ¡Se previsualizará con tus datos!</p>
+                
+                <div class="catalog-grid" id="catalog-container">
+                    <!-- Cards will be dynamically injected by JS, representing the 14 proposals -->
                 </div>
             </section>
 
