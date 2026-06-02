@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Neo-Brutalist Stories SPA Card</title>
+    <meta name="description" content="Propuesta 6: Tarjeta digital móvil en formato de Historias con estilo Neo-Brutalista de alto contraste, rejillas rígidas y navegación por bordes en CSS puro.">
+    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Outer Bold Neo-Brutalist Smartphone Mockup Shell -->
+    <div class="smartphone-shell-brutal">
+        <div class="smartphone-speaker"></div>
+        <div class="smartphone-camera"></div>
+        
+        <!-- Mock Status Bar -->
+        <div class="smartphone-status-bar">
+            <span class="status-time">13:55</span>
+            <div class="status-icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="status-icon">
+                    <path d="M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M1.5 9.5a15 15 0 0 1 21 0"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="status-icon">
+                    <rect width="16" height="10" x="2" y="7" rx="1"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- PURE CSS SPA CONTROLLER (HIDDEN RADIO INPUTS) -->
+        <!-- ------------------------------------------------------------- -->
+        <input type="radio" name="brutal-story-tab" id="slide-1-trigger" checked>
+        <input type="radio" name="brutal-story-tab" id="slide-2-trigger">
+        <input type="radio" name="brutal-story-tab" id="slide-3-trigger">
+        <input type="radio" name="brutal-story-tab" id="slide-4-trigger">
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- NEO-BRUTALIST STORY PROGRESS SEGMENTS -->
+        <!-- ------------------------------------------------------------- -->
+        <div class="story-progress-bar">
+            <div class="progress-segment" id="seg-1"><div class="progress-fill"></div></div>
+            <div class="progress-segment" id="seg-2"><div class="progress-fill"></div></div>
+            <div class="progress-segment" id="seg-3"><div class="progress-fill"></div></div>
+            <div class="progress-segment" id="seg-4"><div class="progress-fill"></div></div>
+        </div>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- INTERACTIVE TAP NAVIGATION OVERLAYS (PURE CSS TAP SYSTEM) -->
+        <!-- Tapping left goes back, tapping right goes forward -->
+        <!-- ------------------------------------------------------------- -->
+        <div class="tap-navigator-left">
+            <label for="slide-1-trigger" class="nav-target target-to-1"></label>
+            <label for="slide-2-trigger" class="nav-target target-to-2"></label>
+            <label for="slide-3-trigger" class="nav-target target-to-3"></label>
+        </div>
+        <div class="tap-navigator-right">
+            <label for="slide-2-trigger" class="nav-target target-to-2"></label>
+            <label for="slide-3-trigger" class="nav-target target-to-3"></label>
+            <label for="slide-4-trigger" class="nav-target target-to-4"></label>
+        </div>
+
+        <!-- App Viewport Container -->
+        <div class="app-viewport">
+            
+            <!-- ------------------------------------------------------------- -->
+            <!-- SLIDE 1: IDENTIDAD (Theme: Pastel Lavender & Blueprint grids) -->
+            <!-- ------------------------------------------------------------- -->
+            <section class="story-slide" id="story-slide-1">
+                <div class="story-slide-content">
+                    <span class="slide-badge badge-lavender">01. Identidad</span>
+                    
+                    <!-- Circular Avatar with thick black border and flat shadow -->
+                    <div class="story-avatar-container">
+                        <img src="avatar.png" alt="Thiago Brutalist Avatar" class="story-avatar-img">
+                        <div class="status-dot"></div>
+                    </div>
+
+                    <h1 class="story-title">Thiago</h1>
+                    <p class="story-job">Senior Full-Stack Developer</p>
+                    
+                    <p class="story-desc">Construyendo el futuro de la web. Combino arquitectura de software e interfaces limpias basadas en grillas sólidas.</p>
+                    
+                    <!-- Tap hints -->
+                    <div class="swipe-hint">
+                        <span class="pulse-arrow">👉</span> Toca la derecha para continuar
+                    </div>
+                </div>
+            </section>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- SLIDE 2: SKILLS & STATS (Theme: Pastel Fresh Mint) -->
+            <!-- ------------------------------------------------------------- -->
+            <section class="story-slide" id="story-slide-2">
+                <div class="story-slide-content">
+                    <span class="slide-badge badge-mint">02. Stack y Métricas</span>
+                    
+                    <h2 class="slide-heading">Track Record</h2>
+                    
+                    <div class="story-stats-grid">
+                        <div class="story-stat-card">
+                            <span class="val">8+</span>
+                            <span class="lbl">Años Exp.</span>
+                        </div>
+                        <div class="story-stat-card">
+                            <span class="val">120+</span>
+                            <span class="lbl">Listos</span>
+                        </div>
+                        <div class="story-stat-card">
+                            <span class="val">4.9★</span>
+                            <span class="lbl">Rating</span>
+                        </div>
+                    </div>
+
+                    <h2 class="slide-heading" style="margin-top: 1.5rem;">Core Stack</h2>
+                    <div class="story-skills-box">
+                        <div class="skills-subgroup">
+                            <h3>Frontend</h3>
+                            <div class="skills-row">
+                                <span class="s-pill">React / Next.js</span>
+                                <span class="s-pill">TypeScript</span>
+                                <span class="s-pill">Brutalist CSS</span>
+                            </div>
+                        </div>
+                        <div class="skills-subgroup" style="margin-top: 0.88rem;">
+                            <h3>Backend & Cloud</h3>
+                            <div class="skills-row">
+                                <span class="s-pill">Node / Django</span>
+                                <span class="s-pill">PostgreSQL</span>
+                                <span class="s-pill">Docker Core</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- SLIDE 3: WORK / PORTFOLIO (Theme: Pastel Golden Amber) -->
+            <!-- ------------------------------------------------------------- -->
+            <section class="story-slide" id="story-slide-3">
+                <div class="story-slide-content">
+                    <span class="slide-badge badge-amber">03. Portafolio</span>
+                    
+                    <h2 class="slide-heading">Casos de Éxito</h2>
+                    
+                    <div class="story-portfolio-list">
+                        <article class="story-proj-card">
+                            <span class="p-category">SaaS App</span>
+                            <h3>Ecosys Portal</h3>
+                            <p>Plataforma para control administrativo y logístico multi-hilo.</p>
+                            <div class="p-tags"><span>React</span><span>Docker</span></div>
+                        </article>
+
+                        <article class="story-proj-card">
+                            <span class="p-category">Fintech</span>
+                            <h3>Stripe Checkout</h3>
+                            <p>Flujo modular optimizado para conversión en smartphones.</p>
+                            <div class="p-tags"><span>Next.js</span><span>Stripe</span></div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- SLIDE 4: CONTACTO (Theme: Pastel Coral Orange) -->
+            <!-- ------------------------------------------------------------- -->
+            <section class="story-slide" id="story-slide-4">
+                <div class="story-slide-content">
+                    <span class="slide-badge badge-coral">04. Contacto</span>
+                    
+                    <h2 class="slide-heading">¡Iniciemos hoy!</h2>
+                    <p class="slide-desc" style="color: #000000; font-weight: 700; margin-bottom: 0.88rem;">Escríbeme para agendar una consultoría rápida.</p>
+
+                    <form class="story-form" id="story-contact-form" onsubmit="return false;">
+                        <div class="story-input-wrapper">
+                            <input type="text" id="story-name-in" placeholder="Nombre completo" required>
+                        </div>
+
+                        <div class="story-input-wrapper">
+                            <input type="email" id="story-email-in" placeholder="Tu Correo Electrónico" required>
+                        </div>
+
+                        <div class="story-input-wrapper">
+                            <textarea id="story-msg-in" rows="3" placeholder="Contenido de tu mensaje..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="story-submit-btn" id="story-submit">
+                            <span>Enviar Mensaje 🚀</span>
+                        </button>
+                    </form>
+
+                    <!-- Quick socials -->
+                    <div class="story-social-icons">
+                        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Smartphone bottom home indicator line -->
+        <div class="smartphone-home-indicator"></div>
+    </div>
+
+    <!-- Script connection (Mock JS with comments as requested) -->
+    <script src="app.js"></script>
+</body>
+</html>

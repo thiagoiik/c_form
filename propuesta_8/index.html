@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Radial Orbit Menu SPA Card</title>
+    <meta name="description" content="Propuesta 8: Tarjeta digital móvil interactiva en formato de menú orbital giratorio con física de rotación y cajones esmerilados en CSS puro.">
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Outer Premium Smartphone Shell Mockup -->
+    <div class="smartphone-shell-radial">
+        <div class="smartphone-speaker"></div>
+        <div class="smartphone-camera"></div>
+        
+        <!-- Mock Status Bar -->
+        <div class="smartphone-status-bar">
+            <span class="status-time">14:05</span>
+            <div class="status-icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <path d="M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M1.5 9.5a15 15 0 0 1 21 0"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <rect width="16" height="10" x="2" y="7" rx="1.5"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- PURE CSS SPA STATE MACHINE (RADIO TRIGGERS) -->
+        <!-- ------------------------------------------------------------- -->
+        <input type="radio" name="radial-tab" id="rad-1-trigger" checked>
+        <input type="radio" name="radial-tab" id="rad-2-trigger">
+        <input type="radio" name="radial-tab" id="rad-3-trigger">
+        <input type="radio" name="radial-tab" id="rad-4-trigger">
+
+        <!-- App Viewport Container (Obsidian Cosmic Nebula Canvas) -->
+        <div class="app-viewport">
+            
+            <!-- Ambient Nebula Glow Orbs -->
+            <div class="glow-orb orb-teal"></div>
+            <div class="glow-orb orb-magenta"></div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- THE RADIAL SYSTEM CONTAINER -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="radial-system-wrapper">
+                <div class="radial-system">
+                    
+                    <!-- Center Core: Pulsing avatar -->
+                    <div class="radial-core">
+                        <img src="avatar.png" alt="Thiago Core Avatar" class="radial-avatar-img">
+                        <div class="radial-pulse-wave"></div>
+                    </div>
+
+                    <!-- Dashed Orbital Ring Pathway -->
+                    <div class="orbital-ring"></div>
+
+                    <!-- Orbiting Nodes (Linked labels) -->
+                    <!-- Node 1: Top (0 degrees) -->
+                    <label for="rad-1-trigger" class="orbit-node node-1" id="lbl-node-1" aria-label="Ver Perfil">
+                        <div class="node-inner">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="n-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <span class="node-tag">Perfil</span>
+                    </label>
+
+                    <!-- Node 2: Right (90 degrees) -->
+                    <label for="rad-2-trigger" class="orbit-node node-2" id="lbl-node-2" aria-label="Ver Habilidades">
+                        <div class="node-inner">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="n-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <span class="node-tag">Stack</span>
+                    </label>
+
+                    <!-- Node 3: Bottom (180 degrees) -->
+                    <label for="rad-3-trigger" class="orbit-node node-3" id="lbl-node-3" aria-label="Ver Proyectos">
+                        <div class="node-inner">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="n-icon"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <span class="node-tag">Trabajos</span>
+                    </label>
+
+                    <!-- Node 4: Left (270 degrees) -->
+                    <label for="rad-4-trigger" class="orbit-node node-4" id="lbl-node-4" aria-label="Ver Contacto">
+                        <div class="node-inner">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="n-icon"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+                        </div>
+                        <span class="node-tag">Contacto</span>
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- Hint arrow to show spin possibility -->
+            <div class="wheel-rotate-hint">
+                <span class="hint-icon">🔄</span> Gira la rueda para cambiar
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- DETAIL DRAWER (GLASSMORPHIC BOX AT THE BASE) -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="detail-drawer">
+                <div class="drawer-drag-pill"></div>
+                
+                <!-- Drawer Content Area -->
+                <div class="drawer-viewport">
+                    
+                    <!-- Content 1: Profile (Identity) -->
+                    <div class="drawer-panel" id="panel-profile">
+                        <span class="panel-badge badge-teal">Bio del Núcleo</span>
+                        <h2 class="panel-title">Thiago</h2>
+                        <p class="panel-subtitle">Senior Full-Stack Developer</p>
+                        <p class="panel-desc">Arquitecto de soluciones interactivas de alta fidelidad. Creo código limpio, estructuras optimizadas y experiencias que cautivan.</p>
+                        
+                        <div class="panel-socials">
+                            <a href="https://github.com" target="_blank" rel="noopener" class="ps-btn" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ps-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="ps-btn" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ps-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Content 2: Skills & Stats -->
+                    <div class="drawer-panel" id="panel-skills">
+                        <span class="panel-badge badge-teal">Metricas del Sistema</span>
+                        <h2 class="panel-title">Habilidades Clave</h2>
+                        
+                        <div class="panel-skills-list">
+                            <div class="p-skill-item">
+                                <div class="p-skill-header">
+                                    <span>Frontend (Next.js / TS)</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="p-skill-bar"><div class="p-fill" style="width: 95%;"></div></div>
+                            </div>
+
+                            <div class="p-skill-item" style="margin-top: 0.75rem;">
+                                <div class="p-skill-header">
+                                    <span>Backend (Node.js / Python)</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="p-skill-bar"><div class="p-fill" style="width: 88%;"></div></div>
+                            </div>
+
+                            <div class="p-skill-item" style="margin-top: 0.75rem;">
+                                <div class="p-skill-header">
+                                    <span>Cloud & DevOps (Docker / AWS)</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="p-skill-bar"><div class="p-fill" style="width: 90%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content 3: Portfolio (Works) -->
+                    <div class="drawer-panel" id="panel-portfolio">
+                        <span class="panel-badge badge-magenta">Casos de Éxito</span>
+                        <h2 class="panel-title">Proyectos Destacados</h2>
+                        
+                        <div class="panel-works-scroll">
+                            <div class="panel-work-card">
+                                <h3>Ecosys Portal 🌐</h3>
+                                <p>SaaS modular para consolidación logística de múltiples servicios y auditoría.</p>
+                            </div>
+                            <div class="panel-work-card" style="margin-top: 0.75rem;">
+                                <h3>Stripe Checkout 💳</h3>
+                                <p>Optimización y despliegue del motor transaccional de pagos responsive.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content 4: Contact Form -->
+                    <div class="drawer-panel" id="panel-contact">
+                        <span class="panel-badge badge-magenta">Comunicaciones</span>
+                        <h2 class="panel-title">¡Hablemos de tu Proyecto!</h2>
+                        
+                        <form class="drawer-form" id="drawer-contact-form" onsubmit="return false;">
+                            <div class="drawer-input-wrapper">
+                                <input type="text" id="radial-name" placeholder="Tu nombre..." required>
+                            </div>
+                            <div class="drawer-input-wrapper">
+                                <input type="email" id="radial-email" placeholder="Tu correo electrónico..." required>
+                            </div>
+                            <button type="submit" class="drawer-submit-btn">
+                                <span>Enviar Mensaje 🚀</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="smartphone-home-indicator"></div>
+    </div>
+
+    <!-- Script connection (Mock JS with comments as requested) -->
+    <script src="app.js"></script>
+</body>
+</html>

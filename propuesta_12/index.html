@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Sapphire Music Player SPA</title>
+    <meta name="description" content="Propuesta 12: Tarjeta digital SPA interactiva con rediseño total de UI en formato de reproductor de música Azul Zafiro en CSS puro.">
+    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Outer Premium Blue Steel Smartphone Shell Mockup -->
+    <div class="smartphone-shell-player">
+        <div class="smartphone-speaker"></div>
+        <div class="smartphone-camera"></div>
+        
+        <!-- Mock Status Bar -->
+        <div class="smartphone-status-bar">
+            <span class="status-time">14:18</span>
+            <div class="status-icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <path d="M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M1.5 9.5a15 15 0 0 1 21 0"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <rect width="16" height="10" x="2" y="7" rx="1.5"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- PURE CSS PLAYER STATE MACHINE (RADIO TRIGGERS) -->
+        <!-- ------------------------------------------------------------- -->
+        <input type="radio" name="player-tab" id="play-home-trigger" checked>
+        <input type="radio" name="player-tab" id="play-villa-trigger">
+        <input type="radio" name="player-tab" id="play-calc-trigger">
+        <input type="radio" name="player-tab" id="play-contact-trigger">
+
+        <!-- App Viewport Container (Sapphire Cosmic Canvas) -->
+        <div class="app-viewport">
+            
+            <!-- PLAYER MAIN CONSOLE -->
+            <div class="player-main-console" id="player-home-view">
+                
+                <!-- TOP HEADER BAR -->
+                <div class="player-top-bar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="top-nav-icon"><path d="m15 18-6-6 6-6"/></svg>
+                    <span class="now-playing-title">REPRODUCIENDO ÁLBUM</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="top-nav-icon"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                </div>
+
+                <!-- ROTATING VINYL COVER PANEL -->
+                <div class="album-cover-container">
+                    <div class="vinyl-record-wrap">
+                        <div class="vinyl-disc">
+                            <div class="vinyl-groove"></div>
+                            <div class="vinyl-center-label">
+                                <img src="avatar.png" alt="Thiago Cover" class="avatar-label-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SONG METADATA DESCRIPTION -->
+                <div class="song-meta">
+                    <div class="meta-titles">
+                        <h1 class="song-title">Thiago</h1>
+                        <p class="song-artist">Broker Inmobiliario Exclusivo</p>
+                    </div>
+                    <a href="tel:+5255555555" class="like-button-active" aria-label="Agregar a favoritos">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="heart-icon-svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </a>
+                </div>
+
+                <!-- PLAYBACK PROGRESS TICKER BAR (MOCK TELEMETRY) -->
+                <div class="playback-progress-container">
+                    <div class="progress-bar-rail">
+                        <div class="progress-bar-fill"></div>
+                        <div class="progress-bar-knob"></div>
+                    </div>
+                    <div class="progress-time-stamps">
+                        <span>1:45</span>
+                        <span>3:00</span>
+                    </div>
+                </div>
+
+                <!-- TRACKLIST: INTERACTIVE PLAYBACK LISTINGS -->
+                <div class="tracklist-container">
+                    <span class="tracklist-header">Pistas del Catálogo Inmobiliario</span>
+                    
+                    <!-- Track item 1: Villa Lux -->
+                    <label for="play-villa-trigger" class="track-row">
+                        <span class="track-index">1</span>
+                        <div class="track-info">
+                            <span class="track-name">Villa Lumina (Valle de Bravo)</span>
+                            <span class="track-sub">Exclusiva • Destacada</span>
+                        </div>
+                        <span class="track-duration">4:50</span>
+                    </label>
+
+                    <!-- Track item 2: Finance Credit -->
+                    <label for="play-calc-trigger" class="track-row">
+                        <span class="track-index">2</span>
+                        <div class="track-info">
+                            <span class="track-name">Simulador de Crédito Hipotecario</span>
+                            <span class="track-sub">Cálculos Interactivos</span>
+                        </div>
+                        <span class="track-duration">3:15</span>
+                    </label>
+
+                    <!-- Track item 3: Contact Appointment -->
+                    <label for="play-contact-trigger" class="track-row">
+                        <span class="track-index">3</span>
+                        <div class="track-info">
+                            <span class="track-name">Agendar Recorrido Privado</span>
+                            <span class="track-sub">Contacto Directo</span>
+                        </div>
+                        <span class="track-duration">2:40</span>
+                    </label>
+                </div>
+
+                <!-- PLAYBACK CONSOLE CONTROLS (BASE STICKY MODULE) -->
+                <div class="playback-controls-area">
+                    <button class="ctrl-sub-btn" aria-label="Modo aleatorio">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ctrl-svg"><path d="M16 3h5v5M4 20l7-7M21 3 13 11M4 4l16 16M16 21h5v-5"/></svg>
+                    </button>
+                    
+                    <button class="ctrl-sub-btn" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="ctrl-svg-solid"><polygon points="19 20 9 12 19 4 19 20"></polygon><rect width="2" height="16" x="5" y="4"></rect></svg>
+                    </button>
+
+                    <a href="https://wa.me/5255555555" target="_blank" rel="noopener" class="ctrl-main-play-btn" aria-label="Reproducir/Llamar">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="play-svg-icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </a>
+
+                    <button class="ctrl-sub-btn" aria-label="Siguiente">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="ctrl-svg-solid"><polygon points="5 4 15 12 5 20 5 4"></polygon><rect width="2" height="16" x="17" y="4"></rect></svg>
+                    </button>
+
+                    <button class="ctrl-sub-btn" aria-label="Repetir en bucle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ctrl-svg"><path d="m17 2 4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- LYRICS DRAWER 1: VILLA DETAIL SCREEN -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="lyrics-drawer-panel" id="lyrics-villa-screen">
+                <div class="drawer-drag-line"></div>
+                <div class="drawer-header">
+                    <span class="drawer-track-meta">REPRODUCIENDO PISTA 1 DE 3</span>
+                    <label for="play-home-trigger" class="drawer-close-btn">✖ Cerrar</label>
+                </div>
+
+                <div class="drawer-content">
+                    <div class="property-lyrics-card">
+                        <div class="lyrics-prop-banner">
+                            <img src="luxury_villa.png" alt="Luxury Villa Valle" class="lyrics-prop-img">
+                            <span class="lyrics-price-badge">$1,850,000 USD</span>
+                        </div>
+                        <div class="lyrics-prop-body">
+                            <span class="lyrics-badge-tag">Exclusiva</span>
+                            <h2>Villa Lumina - Valle de Bravo</h2>
+                            <p class="lyrics-loc">📍 Av. del Lago 142, Estado de México</p>
+                            
+                            <div class="lyrics-specs-grid">
+                                <div class="spec-bubble">🛏️ 4 Hab</div>
+                                <div class="spec-bubble">🚿 4.5 Baños</div>
+                                <div class="spec-bubble">📐 580 m²</div>
+                            </div>
+
+                            <p class="lyrics-narrative">
+                                Residencia minimalista de lujo que redefine la arquitectura mexicana de descanso. Con vistas completas al lago, piscina infinita climatizada, cocina gourmet integrada y acabados premium en concreto y madera de encino.
+                            </p>
+
+                            <label for="play-contact-trigger" class="lyrics-action-btn">🗝️ Agendar Recorrido Privado</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- LYRICS DRAWER 2: MORTGAGE CALCULATOR -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="lyrics-drawer-panel" id="lyrics-calc-screen">
+                <div class="drawer-drag-line"></div>
+                <div class="drawer-header">
+                    <span class="drawer-track-meta">REPRODUCIENDO PISTA 2 DE 3</span>
+                    <label for="play-home-trigger" class="drawer-close-btn">✖ Cerrar</label>
+                </div>
+
+                <div class="drawer-content">
+                    <h2 class="drawer-title">Calculadora Financiera</h2>
+                    <p class="drawer-intro">Fórmula contable amortizada en tiempo real para estimaciones rápidas de crédito.</p>
+                    
+                    <form class="lyrics-calculator-form" onsubmit="return false;">
+                        <div class="ly-form-group">
+                            <label>Valor Inmueble (USD):</label>
+                            <input type="number" id="prop-value" value="1850000">
+                        </div>
+
+                        <div class="ly-form-group">
+                            <label>Enganche de Fondo (20%):</label>
+                            <input type="number" id="prop-down" value="370000">
+                        </div>
+
+                        <div class="ly-form-group">
+                            <label>Plazo Hipotecario:</label>
+                            <select id="prop-years">
+                                <option value="15">15 Años (Tasa 6.5%)</option>
+                                <option value="20" selected>20 Años (Tasa 7.2%)</option>
+                                <option value="30">30 Años (Tasa 7.5%)</option>
+                            </select>
+                        </div>
+
+                        <div class="lyrics-results-panel">
+                            <span class="res-lbl">Pago Mensual Estimado:</span>
+                            <span class="res-val" id="monthly-payment">$10,950 USD</span>
+                            <span class="res-note">*Sujeto a verificación bancaria directa.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- LYRICS DRAWER 3: CONTACT FORM BOOKING -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="lyrics-drawer-panel" id="lyrics-contact-screen">
+                <div class="drawer-drag-line"></div>
+                <div class="drawer-header">
+                    <span class="drawer-track-meta">REPRODUCIENDO PISTA 3 DE 3</span>
+                    <label for="play-home-trigger" class="drawer-close-btn">✖ Cerrar</label>
+                </div>
+
+                <div class="drawer-content">
+                    <h2 class="drawer-title">Coordinar Recorrido</h2>
+                    <p class="drawer-intro">Envía tu solicitud y recibe tu pase digital de acceso inmediato.</p>
+                    
+                    <form class="lyrics-contact-form" onsubmit="return false;">
+                        <div class="ly-form-group">
+                            <label>Nombre del Solicitante:</label>
+                            <input type="text" placeholder="Escribe tu nombre..." required>
+                        </div>
+
+                        <div class="ly-form-group">
+                            <label>Celular / WhatsApp:</label>
+                            <input type="tel" placeholder="+52 (55) 0000 0000" required>
+                        </div>
+
+                        <div class="ly-form-group">
+                            <label>Fecha del Recorrido:</label>
+                            <input type="date" required>
+                        </div>
+
+                        <button type="submit" class="lyrics-submit-btn">
+                            <span>Solicitar Pase de Visita 🗝️</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="smartphone-home-indicator"></div>
+    </div>
+
+    <!-- Script connection (Mock JS with comments as requested) -->
+    <script src="app.js"></script>
+</body>
+</html>

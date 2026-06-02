@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Corporate Prestige Executive SPA</title>
+    <meta name="description" content="Propuesta 14: Tarjeta digital SPA para Marca Personal Corporativa y Asesoría Ejecutiva en color Deep Navy y Oro Champagne en CSS puro.">
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Outer Premium Gold Bezel Executive Smartphone Shell Mockup -->
+    <div class="smartphone-shell-executive">
+        <div class="smartphone-speaker"></div>
+        <div class="smartphone-camera"></div>
+        
+        <!-- Mock Status Bar (Corporate High-Contrast Dark Text) -->
+        <div class="smartphone-status-bar">
+            <span class="status-time">14:22</span>
+            <div class="status-icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <path d="M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M1.5 9.5a15 15 0 0 1 21 0"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <rect width="16" height="10" x="2" y="7" rx="1.5"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- PURE CSS CORPORATIVE STATE MACHINE (RADIO TRIGGERS) -->
+        <!-- ------------------------------------------------------------- -->
+        <input type="radio" name="exec-tab" id="exec-profile-trigger" checked>
+        <input type="radio" name="exec-tab" id="exec-services-trigger">
+        <input type="radio" name="exec-tab" id="exec-timeline-trigger">
+        <input type="radio" name="exec-tab" id="exec-contact-trigger">
+
+        <!-- App Viewport Container (Platinum Executive Canvas) -->
+        <div class="app-viewport">
+            
+            <!-- EXECUTIVE TOP HEADER -->
+            <div class="executive-brand-header">
+                <span class="exec-brand-badge">THIAGO ALVES</span>
+                <span class="exec-cert-badge">✓ MIEMBRO DE CONSEJO</span>
+            </div>
+
+            <!-- EXECUTIVE MAIN SUMMARY -->
+            <div class="executive-profile-summary">
+                <div class="exec-avatar-container">
+                    <div class="exec-avatar-glow">
+                        <img src="avatar.png" alt="Thiago Alves" class="exec-avatar-img">
+                    </div>
+                    <span class="exec-status-dot"></span>
+                </div>
+                <h1 class="exec-main-name">Thiago Alves</h1>
+                <p class="exec-main-title">Consultor de Negocios & Consejero Ejecutivo</p>
+            </div>
+
+            <!-- HORIZONTAL BOARDROOM MENU TABS (CSS SELECTORS) -->
+            <div class="boardroom-tabs-navbar">
+                <label for="exec-profile-trigger" class="board-tab-btn" id="btn-profile">Perfil</label>
+                <label for="exec-services-trigger" class="board-tab-btn" id="btn-services">Servicios</label>
+                <label for="exec-timeline-trigger" class="board-tab-btn" id="btn-timeline">Trayectoria</label>
+                <label for="exec-contact-trigger" class="board-tab-btn" id="btn-contact">Contacto</label>
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- TAB PANEL 1: EXECUTIVE PROFILE DESCRIPTION -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="exec-panel" id="panel-profile">
+                <h2 class="panel-heading-serif">Visión Estratégica</h2>
+                <p class="panel-narrative">
+                    Especialista en reestructuración corporativa, gobierno de juntas directivas y escalamiento financiero de empresas de alto impacto. Ayudo a organizaciones a trazar rutas claras de consolidación comercial y gobernanza institucional.
+                </p>
+
+                <!-- Clean Corporate Metrics Grid -->
+                <div class="exec-metrics-grid">
+                    <div class="metric-card-exec">
+                        <span class="m-val">+15 Años</span>
+                        <span class="m-lbl">Exp. Corporativa</span>
+                    </div>
+                    <div class="metric-card-exec">
+                        <span class="m-val">$45M USD</span>
+                        <span class="m-lbl">Activos Asesorados</span>
+                    </div>
+                    <div class="metric-card-exec">
+                        <span class="m-val">98%</span>
+                        <span class="m-lbl">Retención Estratégica</span>
+                    </div>
+                </div>
+
+                <label for="exec-services-trigger" class="exec-flow-next-btn">Ver Servicios Asesores ➔</label>
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- TAB PANEL 2: ADVISORY SERVICES -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="exec-panel" id="panel-services">
+                <h2 class="panel-heading-serif">Asesoría de Alta Gama</h2>
+                <p class="panel-narrative-small">Servicios estructurados bajo los más altos estándares corporativos internacionales:</p>
+
+                <div class="exec-services-stack">
+                    <!-- Service 1 -->
+                    <div class="exec-service-block">
+                        <h3>1. Gobierno Corporativo & Gobernanza</h3>
+                        <p>Estructuración de consejos directivos, comités de auditoría y planes de sucesión ejecutiva.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="exec-service-block">
+                        <h3>2. Fusiones, Adquisiciones & Alianzas</h3>
+                        <p>Asesoría en valuación comercial, due diligence y estructuración de transacciones de M&A.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="exec-service-block">
+                        <h3>3. Mentoría Ejecutiva de Alto Ticket</h3>
+                        <p>Acompañamiento personalizado para directivos, fundadores y CEOs en toma de decisiones críticas.</p>
+                    </div>
+                </div>
+
+                <label for="exec-timeline-trigger" class="exec-flow-next-btn">Ver Trayectoria Profesional ➔</label>
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- TAB PANEL 3: EXECUTIVE TIMELINE -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="exec-panel" id="panel-timeline">
+                <h2 class="panel-heading-serif">Cronología Corporativa</h2>
+                
+                <div class="exec-timeline-stream">
+                    <!-- Milestone 1 -->
+                    <div class="timeline-step">
+                        <div class="step-point"></div>
+                        <div class="step-details">
+                            <span class="step-date">2020 - Presente</span>
+                            <h3>Socio Director</h3>
+                            <p class="step-company">Alves & Partners Consulting</p>
+                            <p class="step-summary">Liderazgo de auditorías estratégicas y valuaciones para holdings corporativos latinoamericanos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-step">
+                        <div class="step-point"></div>
+                        <div class="step-details">
+                            <span class="step-date">2015 - 2020</span>
+                            <h3>Director Financiero & Gobierno</h3>
+                            <p class="step-company">Stratega Global Fintech</p>
+                            <p class="step-summary">Diseño de la estructura corporativa y levantamiento de capital institucional Serie B.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="exec-contact-trigger" class="exec-flow-next-btn">Agendar Sesión Privada ➔</label>
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- TAB PANEL 4: SECURE EXECUTIVE CONTACT FORM -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="exec-panel" id="panel-contact">
+                <h2 class="panel-heading-serif">Canal de Contacto Seguro</h2>
+                <p class="panel-narrative-small">Solicita una audiencia de diagnóstico. Las solicitudes corporativas son revisadas bajo estricto acuerdo de confidencialidad (NDA).</p>
+                
+                <form class="exec-secure-form" onsubmit="return false;">
+                    <div class="exec-form-row">
+                        <label>Nombre y Cargo Corporativo:</label>
+                        <input type="text" placeholder="Ej: Ing. Sofia Martinez, CEO" required>
+                    </div>
+
+                    <div class="exec-form-row">
+                        <label>Empresa u Organización:</label>
+                        <input type="text" placeholder="Ej: Grupo Industrial S.A." required>
+                    </div>
+
+                    <div class="exec-form-row">
+                        <label>Correo Electrónico Institucional:</label>
+                        <input type="email" placeholder="ejemplo@empresa.com" required>
+                    </div>
+
+                    <button type="submit" class="exec-submit-btn">
+                        <span>Enviar Solicitud de Reunión 🏛️</span>
+                    </button>
+                </form>
+
+                <!-- PDF/vCard Download Button -->
+                <a href="tel:+5255555555" class="exec-vcard-btn">
+                    <span>📥 Descargar Tarjeta de Contacto Corporativa</span>
+                </a>
+            </div>
+
+            <!-- BRAND PRESTIGE FOOTER BLOCK -->
+            <div class="executive-prestige-footer">
+                <span class="footer-prestige-lbl">CONFIDENCIALIDAD GARANTIZADA • GLOBAL EXECUTIVE ADVISORY</span>
+            </div>
+
+        </div>
+
+        <div class="smartphone-home-indicator"></div>
+    </div>
+
+    <!-- Script connection (Mock JS with comments as requested) -->
+    <script src="app.js"></script>
+</body>
+</html>

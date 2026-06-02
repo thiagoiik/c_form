@@ -1,0 +1,598 @@
+/* CSS Estilo Neo-Brutalista Premium para Propuesta 2 */
+:root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Neo-Brutalist Theme Colors */
+    --bg-neo-canvas: #fbfaf7;
+    --border-dark: #0d0d0d;
+    --text-dark: #0d0d0d;
+    --text-muted: #4b5563;
+    --bg-grid-color: rgba(13, 13, 13, 0.04);
+    
+    /* Pastel Accents for Element Definition */
+    --neo-lavender: #e6e1ff; /* Profile */
+    --neo-mint: #d1fae5;     /* Stats */
+    --neo-rose: #ffe4e6;     /* Socials */
+    --neo-sky: #e0f2fe;      /* Skills */
+    --neo-gold: #fef3c7;     /* Services */
+    --neo-violet: #ede9fe;   /* Portfolio */
+    --neo-coral: #ffebe5;    /* Contact */
+    
+    /* Interactive Accents (Hover/Active states) */
+    --neo-glow-purple: #c3b4fc;
+    --neo-glow-green: #6ee7b7;
+    --neo-glow-blue: #7dd3fc;
+    --neo-glow-rose: #fda4af;
+
+    --transition-bounce: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-neo-canvas);
+    /* Subtle grid background to match design */
+    background-image: 
+        linear-gradient(var(--bg-grid-color) 2px, transparent 2px),
+        linear-gradient(90deg, var(--bg-grid-color) 2px, transparent 2px);
+    background-size: 32px 32px;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    overflow-x: hidden;
+}
+
+/* Container limits */
+.neo-container {
+    width: 100%;
+    max-width: 640px;
+}
+
+/* Main SPA Card frame (acts as a structural board) */
+.neo-card-wrapper {
+    background-color: #ffffff;
+    border: 3.5px solid var(--border-dark);
+    box-shadow: 10px 10px 0px var(--border-dark);
+    border-radius: 28px;
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+}
+
+/* ------------------------------------------------------------- */
+/* STRUCTURAL SOLID COLOR-CODED BLOCKS */
+/* ------------------------------------------------------------- */
+
+/* Shared structural classes for neo brutalist card blocks */
+.neo-block {
+    position: relative;
+    border: 3px solid var(--border-dark);
+    border-radius: 20px;
+    padding: 2.25rem 1.5rem 1.75rem;
+    box-shadow: 6px 6px 0px var(--border-dark);
+    transition: var(--transition-bounce);
+}
+
+/* Structural flat label */
+.neo-label {
+    position: absolute;
+    top: -16px;
+    left: 18px;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border: 2.5px solid var(--border-dark);
+    border-radius: 8px;
+    color: var(--text-dark);
+    box-shadow: 3px 3px 0px var(--border-dark);
+}
+
+/* Defining individual colors for each block */
+.block-profile { background-color: var(--neo-lavender); }
+.block-stats { background-color: var(--neo-mint); }
+.block-socials { background-color: var(--neo-rose); }
+.block-skills { background-color: var(--neo-sky); }
+.block-services { background-color: var(--neo-gold); }
+.block-portfolio { background-color: var(--neo-violet); }
+.block-contact { background-color: var(--neo-coral); }
+
+/* Defining labels backgrounds matching color codes */
+.label-lavender { background-color: #c3b4fc; }
+.label-mint { background-color: #a7f3d0; }
+.label-rose { background-color: #fbcfe8; }
+.label-sky { background-color: #bae6fd; }
+.label-gold { background-color: #fde68a; }
+.label-violet { background-color: #ddd6fe; }
+.label-coral { background-color: #fecdd3; }
+
+/* Micro Interaction: Bouncing lift on hover */
+.neo-block:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px var(--border-dark);
+}
+
+/* ------------------------------------------------------------- */
+/* SUB-COMPONENTS STYLING */
+/* ------------------------------------------------------------- */
+
+/* 1. Profile Block Component Styling */
+.neo-avatar-wrapper {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0.5rem auto 1.5rem;
+}
+
+.avatar-shadow-backing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--border-dark);
+    border-radius: 50%;
+    top: 6px;
+    left: 6px;
+    z-index: 1;
+    transition: var(--transition-bounce);
+}
+
+.neo-avatar-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* PERFECT CIRCLE */
+    object-fit: cover;
+    border: 3.5px solid var(--border-dark);
+    background-color: #ffffff;
+    z-index: 2;
+    transition: var(--transition-bounce);
+}
+
+.neo-avatar-wrapper:hover .neo-avatar-img {
+    transform: translate(-3px, -3px);
+}
+.neo-avatar-wrapper:hover .avatar-shadow-backing {
+    transform: translate(3px, 3px);
+}
+
+.neo-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+.neo-subtitle {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.neo-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 1.5rem;
+    padding: 6px 14px;
+    background-color: #ffffff;
+    border: 2.5px solid var(--border-dark);
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    box-shadow: 3px 3px 0px var(--border-dark);
+    max-width: fit-content;
+}
+
+.status-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #10b981;
+    border: 1.5px solid var(--border-dark);
+}
+
+.neo-bio {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* 2. Stats Block Row */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stat-box {
+    background-color: #ffffff;
+    border: 2.5px solid var(--border-dark);
+    border-radius: 14px;
+    padding: 0.88rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    box-shadow: 4px 4px 0px var(--border-dark);
+}
+
+.stat-box .num {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.stat-box .lbl {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+}
+
+/* 3. Socials Button Block */
+.neo-social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.88rem;
+}
+
+.neo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 2.5px solid var(--border-dark);
+    border-radius: 14px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 4px 4px 0px var(--border-dark);
+    transition: var(--transition-bounce);
+}
+
+.neo-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Hover effects with individual color changes */
+.btn-github:hover { background-color: #f3f4f6; transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--border-dark); }
+.btn-linkedin:hover { background-color: var(--neo-glow-purple); transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--border-dark); }
+.btn-twitter:hover { background-color: var(--neo-glow-blue); transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--border-dark); }
+.btn-email:hover { background-color: var(--neo-glow-rose); transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--border-dark); }
+
+.neo-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--border-dark);
+}
+
+/* Subheadings for elements */
+.neo-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--text-dark);
+}
+
+/* 4. Skills Block Stack */
+.skills-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.skill-subtitle {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.6rem;
+}
+
+.neo-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.neo-pill {
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 6px 14px;
+    background-color: #ffffff;
+    border: 2px solid var(--border-dark);
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px var(--border-dark);
+    transition: var(--transition-bounce);
+}
+
+.neo-pill:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px var(--border-dark);
+    background-color: #ffffff;
+}
+
+/* 5. Services Column Box */
+.services-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-box {
+    display: flex;
+    gap: 1rem;
+    background-color: #ffffff;
+    border: 2.5px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 4px 4px 0px var(--border-dark);
+    transition: var(--transition-bounce);
+}
+
+.service-box:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border-dark);
+}
+
+.service-box-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--border-dark);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 0px var(--border-dark);
+}
+
+.code-color { background-color: var(--neo-glow-blue); }
+.design-color { background-color: var(--neo-glow-rose); }
+
+.service-box-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.service-box-text p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* 6. Portfolio Cards List */
+.portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.neo-project-item {
+    background-color: #ffffff;
+    border: 2.5px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 4px 4px 0px var(--border-dark);
+    transition: var(--transition-bounce);
+    position: relative;
+}
+
+.neo-project-item:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px var(--border-dark);
+}
+
+.project-category-tag {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8b5cf6;
+    background-color: #f5f3ff;
+    border: 1.5px solid var(--border-dark);
+    border-radius: 6px;
+    padding: 2px 8px;
+    display: inline-block;
+    margin-bottom: 8px;
+    box-shadow: 2px 2px 0px var(--border-dark);
+}
+
+.neo-project-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.neo-project-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.neo-project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.neo-project-tech span {
+    font-size: 0.72rem;
+    font-weight: 800;
+    background-color: #f3f4f6;
+    border: 1.5px solid var(--border-dark);
+    border-radius: 6px;
+    padding: 3px 8px;
+}
+
+/* 7. Contact Form Custom Input Controls */
+.neo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.neo-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.neo-input-group label {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.neo-input-group input,
+.neo-input-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #ffffff;
+    border: 2.5px solid var(--border-dark);
+    border-radius: 12px;
+    color: var(--text-dark);
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    box-shadow: 3px 3px 0px var(--border-dark);
+    transition: var(--transition-bounce);
+}
+
+.neo-input-group input:focus,
+.neo-input-group textarea:focus {
+    outline: none;
+    background-color: #ffffff;
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--border-dark);
+}
+
+/* Thick submit button */
+.neo-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    background-color: #ff8a8a;
+    border: 3px solid var(--border-dark);
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--border-dark);
+    transition: var(--transition-bounce);
+    margin-top: 0.5rem;
+}
+
+.neo-submit-btn:hover {
+    background-color: #ff6b6b;
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px var(--border-dark);
+}
+
+.neo-submit-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--border-dark);
+}
+
+/* Structuring card footer */
+.neo-footer {
+    border-top: 3px solid var(--border-dark);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.neo-footer-tag {
+    background-color: var(--border-dark);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE LAYOUT (Neo Mobile Optimizations) */
+/* ------------------------------------------------------------- */
+
+@media (max-width: 580px) {
+    body {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .neo-card-wrapper {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        gap: 1.75rem;
+    }
+
+    .neo-block {
+        padding: 2rem 1rem 1.25rem;
+        border-radius: 16px;
+    }
+
+    .neo-name {
+        font-size: 2.1rem;
+    }
+
+    .stats-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .neo-social-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .neo-footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}

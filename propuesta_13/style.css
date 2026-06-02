@@ -1,0 +1,630 @@
+/* CSS Premium para Personal Brand Swipe Deck (Propuesta 13) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&display=swap');
+
+:root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Tuscan Warm Editorial Palette */
+    --color-bg-viewport: #f4f1ea;
+    --color-clay: #c85a42;
+    --color-clay-light: rgba(200, 90, 66, 0.08);
+    --color-charcoal: #151515;
+    --color-alabaster: #fdfdfb;
+    --color-text-muted: rgba(21, 21, 21, 0.55);
+
+    --transition-deck: all 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+/* Reset and settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #eae6db;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(200, 90, 66, 0.015) 0%, transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(200, 90, 66, 0.015) 0%, transparent 25%);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* PREMIUM CLAY STEEL PHONE BEZEL MOCKUP */
+/* ------------------------------------------------------------- */
+.smartphone-shell-deck {
+    width: 375px;
+    height: 812px;
+    border: 10px solid var(--color-clay);
+    border-radius: 44px;
+    background-color: var(--color-bg-viewport);
+    box-shadow: 
+        0px 20px 45px rgba(0, 0, 0, 0.15),
+        0px 0px 0px 2.5px var(--color-charcoal);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+/* Speaker Notch */
+.smartphone-speaker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 24px;
+    background-color: var(--color-clay);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 200;
+}
+
+/* Status Bar */
+.smartphone-status-bar {
+    height: 40px;
+    padding: 14px 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    opacity: 0.65;
+    z-index: 150;
+    user-select: none;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.smartphone-home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 5px;
+    background-color: rgba(21, 21, 21, 0.1);
+    border-radius: 10px;
+    z-index: 200;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------- */
+/* APP VIEWPORT CONTAINER */
+/* ------------------------------------------------------------- */
+.app-viewport {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-viewport);
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* BRAND HEADER */
+/* ------------------------------------------------------------- */
+.deck-brand-header {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    margin-top: 36px;
+    border-bottom: 1.2px solid rgba(21, 21, 21, 0.08);
+    padding-bottom: 6px;
+}
+
+.brand-badge {
+    font-family: var(--font-heading);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--color-clay);
+    text-transform: uppercase;
+}
+
+.brand-monogram {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+}
+
+/* ------------------------------------------------------------- */
+/* 3D INTERACTIVE CARD DECK STACK WRAP */
+/* ------------------------------------------------------------- */
+.deck-container {
+    position: relative;
+    width: 100%;
+    height: 490px;
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deck-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-alabaster);
+    border: 1.5px solid var(--color-charcoal);
+    border-radius: 26px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3.5px 3.5px 0px var(--color-charcoal);
+    transition: var(--transition-deck);
+}
+
+/* Stacked Depth (Scale and rotation offsets) */
+.c-1 {
+    z-index: 10;
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.c-2 {
+    z-index: 9;
+    transform: scale(0.95) translateY(14px) rotate(2deg);
+    opacity: 0.95;
+    pointer-events: none;
+}
+
+.c-3 {
+    z-index: 8;
+    transform: scale(0.9) translateY(28px) rotate(-1.5deg);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.c-4 {
+    z-index: 7;
+    transform: scale(0.85) translateY(42px) rotate(1deg);
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------- */
+/* PURE CSS SWIPE MECHANICS ON RADIO ACTIVE TRIGGERS */
+/* ------------------------------------------------------------- */
+input[name="deck-flow"] {
+    display: none;
+}
+
+/* State 2 Checked: Card 1 swipes out, Card 2 focuses */
+#deck-card-2:checked ~ .app-viewport .deck-container .c-1 {
+    transform: translateX(-135%) rotate(-18deg);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+#deck-card-2:checked ~ .app-viewport .deck-container .c-2 {
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+}
+#deck-card-2:checked ~ .app-viewport .deck-container .c-3 {
+    transform: scale(0.95) translateY(14px) rotate(2deg);
+    opacity: 0.95;
+    z-index: 9;
+}
+#deck-card-2:checked ~ .app-viewport .deck-container .c-4 {
+    transform: scale(0.9) translateY(28px) rotate(-1.5deg);
+    opacity: 0.85;
+    z-index: 8;
+}
+
+/* State 3 Checked: Cards 1 and 2 swipe out, Card 3 focuses */
+#deck-card-3:checked ~ .app-viewport .deck-container .c-1,
+#deck-card-3:checked ~ .app-viewport .deck-container .c-2 {
+    transform: translateX(-135%) rotate(-18deg);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+#deck-card-3:checked ~ .app-viewport .deck-container .c-3 {
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+}
+#deck-card-3:checked ~ .app-viewport .deck-container .c-4 {
+    transform: scale(0.95) translateY(14px) rotate(2deg);
+    opacity: 0.95;
+    z-index: 9;
+}
+
+/* State 4 Checked: Cards 1, 2 and 3 swipe out, Card 4 focuses */
+#deck-card-4:checked ~ .app-viewport .deck-container .c-1,
+#deck-card-4:checked ~ .app-viewport .deck-container .c-2,
+#deck-card-4:checked ~ .app-viewport .deck-container .c-3 {
+    transform: translateX(-135%) rotate(-18deg);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+#deck-card-4:checked ~ .app-viewport .deck-container .c-4 {
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+/* ------------------------------------------------------------- */
+/* DECK CONTENT SUB-ELEMENTS */
+/* ------------------------------------------------------------- */
+.card-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.2px solid rgba(21, 21, 21, 0.08);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.card-num {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--color-clay);
+}
+
+.card-tag {
+    font-family: var(--font-heading);
+    font-size: 0.58rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: var(--color-clay-light);
+    border: 1px solid rgba(200, 90, 66, 0.2);
+    color: var(--color-clay);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Profile area */
+.card-profile-area {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.avatar-deck-frame {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    border: 1.5px solid var(--color-charcoal);
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 0px var(--color-charcoal);
+}
+
+.avatar-deck-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.creator-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+    line-height: 1.1;
+}
+
+.creator-subtitle {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+}
+
+.creator-bio {
+    font-size: 0.76rem;
+    color: var(--color-charcoal);
+    line-height: 1.45;
+    margin-bottom: 12px;
+}
+
+/* Creator stats table */
+.creator-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    border-top: 1.2px solid rgba(21, 21, 21, 0.08);
+    border-bottom: 1.2px solid rgba(21, 21, 21, 0.08);
+    padding: 10px 0;
+    margin-bottom: 14px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-clay);
+    line-height: 1.15;
+}
+
+.stat-lbl {
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* Tactile action label buttons */
+.deck-card-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-clay);
+    border: 1.5px solid var(--color-charcoal);
+    border-radius: 14px;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--color-charcoal);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: auto;
+}
+
+.deck-card-action-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--color-charcoal);
+}
+
+.deck-card-action-btn:active {
+    transform: scale(0.97);
+}
+
+/* Card 2: Services */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+}
+
+.section-desc {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+    margin-bottom: 12px;
+    line-height: 1.35;
+}
+
+.services-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.service-item {
+    display: flex;
+    gap: 12px;
+    background-color: rgba(200, 90, 66, 0.02);
+    border: 1px solid rgba(21, 21, 21, 0.08);
+    border-radius: 12px;
+    padding: 8px 10px;
+}
+
+.service-num {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-clay);
+    width: 15px;
+}
+
+.service-body h3 {
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+}
+
+.service-body p {
+    font-size: 0.62rem;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+    line-height: 1.3;
+}
+
+/* Card 3: Testimonials */
+.testimonials-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.testimonial-bubble {
+    background-color: #fbfaf8;
+    border: 1px solid var(--color-charcoal);
+    border-radius: 16px;
+    padding: 10px 12px;
+    box-shadow: 1.5px 1.5px 0px var(--color-charcoal);
+}
+
+.t-quote {
+    font-size: 0.68rem;
+    line-height: 1.4;
+    color: var(--color-charcoal);
+    font-style: italic;
+}
+
+.t-author {
+    display: block;
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--color-clay);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* Card 4: Contact Booking Forms */
+.deck-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.deck-form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1.2px solid var(--color-charcoal);
+    color: var(--color-charcoal);
+    font-family: inherit;
+    font-size: 0.78rem;
+    transition: all 0.25s ease;
+}
+
+.deck-form-group input:focus {
+    outline: none;
+    border-color: var(--color-clay);
+    background-color: #fbfaf8;
+}
+
+.deck-submit-btn {
+    width: 100%;
+    padding: 11px;
+    border-radius: 10px;
+    background-color: var(--color-charcoal);
+    border: 1.2px solid var(--color-charcoal);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--color-charcoal);
+    transition: all 0.2s ease;
+    margin-top: 2px;
+}
+
+.deck-submit-btn:active {
+    transform: scale(0.97);
+}
+
+.deck-card-reset-lbl {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: var(--color-clay);
+    cursor: pointer;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------- */
+/* FOOTER SOCIAL DOCK LINKS BAR */
+/* ------------------------------------------------------------- */
+.deck-social-dock {
+    height: 64px;
+    border-top: 1.2px solid rgba(21, 21, 21, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 16px 14px;
+    background-color: var(--color-alabaster);
+    border-radius: 0 0 34px 34px;
+    margin-top: auto;
+}
+
+.social-dock-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    filter: grayscale(0.2);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-dock-link:hover {
+    transform: translateY(-2.5px) scale(1.15);
+    filter: grayscale(0);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE FULLSCREEN FOR PORTRAIT SMARTPHONES */
+/* ------------------------------------------------------------- */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background-color: var(--color-bg-viewport);
+    }
+    
+    .smartphone-shell-deck {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .smartphone-speaker,
+    .smartphone-camera {
+        display: none;
+    }
+
+    .smartphone-status-bar {
+        height: 48px;
+        padding-top: 18px;
+    }
+
+    .deck-brand-header {
+        margin-top: 48px;
+    }
+}

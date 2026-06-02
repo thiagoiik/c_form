@@ -1,0 +1,606 @@
+/* CSS Premium para Corporate Prestige Executive (Propuesta 14) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+
+    /* Corporate Boardroom Palette */
+    --color-navy: #0a192f;
+    --color-gold: #b89047;
+    --color-gold-hover: #d4af37;
+    --color-gold-light: rgba(184, 144, 71, 0.06);
+    --color-gray-bg: #f4f5f7;
+    --color-white: #ffffff;
+    --color-border: rgba(10, 25, 47, 0.06);
+
+    --transition-exec: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset and settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #e5e7eb;
+    background-image: 
+        radial-gradient(circle at 0% 0%, rgba(184, 144, 71, 0.02) 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(10, 25, 47, 0.02) 0%, transparent 40%);
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* PREMIUM GOLD STEEL BEZEL MOCKUP */
+/* ------------------------------------------------------------- */
+.smartphone-shell-executive {
+    width: 375px;
+    height: 812px;
+    border: 10px solid var(--color-gold);
+    border-radius: 44px;
+    background-color: var(--color-gray-bg);
+    box-shadow: 
+        0px 20px 45px rgba(10, 25, 47, 0.12),
+        0px 0px 0px 2.5px var(--color-navy);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+/* Speaker Notch */
+.smartphone-speaker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 24px;
+    background-color: var(--color-gold);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 200;
+}
+
+/* Status Bar */
+.smartphone-status-bar {
+    height: 40px;
+    padding: 14px 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    opacity: 0.65;
+    z-index: 150;
+    user-select: none;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.smartphone-home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 5px;
+    background-color: rgba(10, 25, 47, 0.08);
+    border-radius: 10px;
+    z-index: 200;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------- */
+/* APP VIEWPORT CONTAINER */
+/* ------------------------------------------------------------- */
+.app-viewport {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-gray-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* EXECUTIVE TOP HEADER */
+/* ------------------------------------------------------------- */
+.executive-brand-header {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    margin-top: 36px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 6px;
+}
+
+.exec-brand-badge {
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--color-navy);
+}
+
+.exec-cert-badge {
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    letter-spacing: 0.02em;
+}
+
+/* ------------------------------------------------------------- */
+/* EXECUTIVE SUMMARY */
+/* ------------------------------------------------------------- */
+.executive-profile-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 14px;
+    margin-bottom: 12px;
+}
+
+.exec-avatar-container {
+    position: relative;
+    width: 68px;
+    height: 68px;
+}
+
+.exec-avatar-glow {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    padding: 2.2px;
+    border: 2.2px solid var(--color-navy);
+    background-color: var(--color-white);
+    box-shadow: 0px 4px 10px rgba(10, 25, 47, 0.12);
+}
+
+.exec-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.exec-status-dot {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 13px;
+    height: 13px;
+    background-color: #10b981;
+    border: 2.2px solid var(--color-white);
+    border-radius: 50%;
+}
+
+.exec-main-name {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-top: 6px;
+}
+
+.exec-main-title {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 1px;
+}
+
+/* ------------------------------------------------------------- */
+/* TABS NAVBAR DECK */
+/* ------------------------------------------------------------- */
+.boardroom-tabs-navbar {
+    display: flex;
+    justify-content: space-between;
+    border: 1.2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2.2px;
+    background-color: var(--color-white);
+    margin-bottom: 14px;
+}
+
+.board-tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 7px 2px;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: rgba(10, 25, 47, 0.55);
+    border-radius: 9px;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition-exec);
+}
+
+.board-tab-btn:hover {
+    color: var(--color-navy);
+}
+
+/* ------------------------------------------------------------- */
+/* CORE EXECUTIVE TAB PANELS */
+/* ------------------------------------------------------------- */
+.exec-panel {
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0px 4px 14px rgba(10, 25, 47, 0.02);
+}
+.exec-panel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Panel Typography */
+.panel-heading-serif {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    border-left: 2.2px solid var(--color-gold);
+    padding-left: 8px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.panel-narrative {
+    font-size: 0.74rem;
+    color: rgba(10, 25, 47, 0.72);
+    line-height: 1.45;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.panel-narrative-small {
+    font-size: 0.7rem;
+    color: rgba(10, 25, 47, 0.55);
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------- */
+/* TABS SELECTION MECHANICAL CONNECTIONS */
+/* ------------------------------------------------------------- */
+input[name="exec-tab"] {
+    display: none;
+}
+
+#exec-profile-trigger:checked ~ .app-viewport #panel-profile,
+#exec-services-trigger:checked ~ .app-viewport #panel-services,
+#exec-timeline-trigger:checked ~ .app-viewport #panel-timeline,
+#exec-contact-trigger:checked ~ .app-viewport #panel-contact {
+    display: flex;
+}
+
+#exec-profile-trigger:checked ~ .app-viewport .boardroom-tabs-navbar #btn-profile,
+#exec-services-trigger:checked ~ .app-viewport .boardroom-tabs-navbar #btn-services,
+#exec-timeline-trigger:checked ~ .app-viewport .boardroom-tabs-navbar #btn-timeline,
+#exec-contact-trigger:checked ~ .app-viewport .boardroom-tabs-navbar #btn-contact {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+/* ------------------------------------------------------------- */
+/* CORPORATE METRICS GRID */
+/* ------------------------------------------------------------- */
+.exec-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.metric-card-exec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-gray-bg);
+    border: 1px solid rgba(10, 25, 47, 0.04);
+    padding: 8px 4px;
+    border-radius: 12px;
+}
+
+.m-val {
+    font-family: var(--font-serif);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.m-lbl {
+    font-size: 0.52rem;
+    font-weight: 700;
+    color: rgba(10, 25, 47, 0.5);
+    text-transform: uppercase;
+    margin-top: 2px;
+    line-height: 1.1;
+}
+
+.exec-flow-next-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-gray-bg);
+    border: 1.2px solid var(--color-navy);
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition-exec);
+    margin-top: auto;
+}
+
+.exec-flow-next-btn:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+/* ------------------------------------------------------------- */
+/* ADVISORY SERVICES BLOCK */
+/* ------------------------------------------------------------- */
+.exec-services-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.exec-service-block {
+    background-color: var(--color-white);
+    border: 1.2px solid rgba(10, 25, 47, 0.06);
+    border-radius: 12px;
+    padding: 8px 10px;
+}
+
+.exec-service-block h3 {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-navy);
+}
+
+.exec-service-block p {
+    font-size: 0.65rem;
+    color: rgba(10, 25, 47, 0.7);
+    line-height: 1.35;
+    margin-top: 2px;
+}
+
+/* ------------------------------------------------------------- */
+/* EXECUTIVE TIMELINE STREAM */
+/* ------------------------------------------------------------- */
+.exec-timeline-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    padding-left: 12px;
+    border-left: 1.2px solid rgba(10, 25, 47, 0.08);
+    margin-left: 6px;
+    margin-bottom: 12px;
+}
+
+.timeline-step {
+    position: relative;
+}
+
+.step-point {
+    position: absolute;
+    top: 4px;
+    left: -17.5px;
+    width: 9px;
+    height: 9px;
+    background-color: var(--color-gold);
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1.5px var(--color-navy);
+}
+
+.step-date {
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+.timeline-step h3 {
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-top: 1px;
+}
+
+.step-company {
+    font-size: 0.64rem;
+    font-weight: 700;
+    color: rgba(10, 25, 47, 0.5);
+    text-transform: uppercase;
+}
+
+.step-summary {
+    font-size: 0.64rem;
+    color: rgba(10, 25, 47, 0.7);
+    line-height: 1.35;
+    margin-top: 2px;
+}
+
+/* ------------------------------------------------------------- */
+/* SECURE SECURE FORMS */
+/* ------------------------------------------------------------- */
+.exec-secure-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.exec-form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.exec-form-row label {
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: var(--color-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.exec-form-row input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: var(--color-gray-bg);
+    border: 1px solid rgba(10, 25, 47, 0.08);
+    color: var(--color-navy);
+    font-family: inherit;
+    font-size: 0.75rem;
+    transition: var(--transition-exec);
+}
+
+.exec-form-row input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    background-color: var(--color-white);
+}
+
+.exec-submit-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--color-navy);
+    border: 1.2px solid var(--color-navy);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(10, 25, 47, 0.1);
+    transition: var(--transition-exec);
+    margin-top: 2px;
+}
+
+.exec-submit-btn:active {
+    transform: scale(0.97);
+}
+
+.exec-vcard-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    border: 1.2px solid var(--color-gold);
+    color: var(--color-gold);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: var(--transition-exec);
+}
+
+.exec-vcard-btn:active {
+    transform: scale(0.97);
+}
+
+/* ------------------------------------------------------------- */
+/* BRAND PRESTIGE FOOTER */
+/* ------------------------------------------------------------- */
+.executive-prestige-footer {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-prestige-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.46rem;
+    font-weight: 800;
+    color: rgba(10, 25, 47, 0.45);
+    letter-spacing: 0.06em;
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE FULLSCREEN FOR PORTRAIT MOBILES */
+/* ------------------------------------------------------------- */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background-color: var(--color-gray-bg);
+    }
+    
+    .smartphone-shell-executive {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .smartphone-speaker,
+    .smartphone-camera {
+        display: none;
+    }
+
+    .smartphone-status-bar {
+        height: 48px;
+        padding-top: 18px;
+    }
+
+    .executive-brand-header {
+        margin-top: 48px;
+    }
+}

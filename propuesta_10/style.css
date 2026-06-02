@@ -1,0 +1,615 @@
+/* CSS Premium para Bento Grid Pristine Real Estate (Propuesta 10) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Pristine High-Contrast Palette */
+    --color-bg: #fdfdfb;
+    --color-card-bg: #ffffff;
+    --color-charcoal: #151518;
+    --color-gold: #b08b47;
+    --color-jade: #0c3c26;
+    --color-text-muted: rgba(21, 21, 24, 0.55);
+
+    --transition-pristine: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset and settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #f3f2ee;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(21, 21, 24, 0.015) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(21, 21, 24, 0.015) 0%, transparent 20%);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* PREMIUM POLISHED GOLD PHONE BEZEL MOCKUP */
+/* ------------------------------------------------------------- */
+.smartphone-shell-pristine {
+    width: 375px;
+    height: 812px;
+    border: 10px solid var(--color-gold);
+    border-radius: 44px;
+    background-color: var(--color-bg);
+    box-shadow: 
+        0px 20px 45px rgba(0, 0, 0, 0.18),
+        0px 0px 0px 2.5px var(--color-charcoal);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+/* Notch and speaker */
+.smartphone-speaker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 24px;
+    background-color: var(--color-gold);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 200;
+}
+
+/* Status Bar (Dark Text) */
+.smartphone-status-bar {
+    height: 40px;
+    padding: 14px 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    opacity: 0.65;
+    z-index: 150;
+    user-select: none;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.smartphone-home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 5px;
+    background-color: rgba(21, 21, 24, 0.12);
+    border-radius: 10px;
+    z-index: 200;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------- */
+/* APP VIEWPORT CONTAINER */
+/* ------------------------------------------------------------- */
+.app-viewport {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 24px;
+    scrollbar-width: none;
+}
+.app-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+/* ------------------------------------------------------------- */
+/* BENTO LAYOUT GRIDS (SWISS EDITORIAL STYLE) */
+/* ------------------------------------------------------------- */
+.bento-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px 14px 24px;
+    width: 100%;
+}
+
+.bento-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-charcoal);
+    border-radius: 22px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-pristine);
+    cursor: pointer;
+    box-shadow: 2.5px 2.5px 0px var(--color-charcoal);
+}
+
+.bento-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3.5px 3.5px 0px var(--color-charcoal);
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+/* Bento Block 1: Profile card */
+.bento-profile {
+    background-color: #fbfbf7;
+    cursor: default;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.avatar-frame {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-charcoal);
+    padding: 2.5px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.badge-realtor {
+    font-size: 0.58rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--color-jade);
+    border: 1px solid var(--color-charcoal);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 100px;
+    height: fit-content;
+}
+
+.broker-name {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    margin-top: 12px;
+    line-height: 1.05;
+}
+
+.broker-title {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+.broker-meta {
+    display: flex;
+    gap: 8px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-top: 14px;
+}
+
+/* Bento Block 2: Quick Sticky Actions */
+.bento-actions {
+    grid-column: span 2;
+    cursor: default;
+}
+
+.bento-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    margin-bottom: 10px;
+    border-bottom: 1.2px solid rgba(21, 21, 24, 0.08);
+    padding-bottom: 4px;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 4px;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-charcoal);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--color-charcoal);
+    font-size: 0.65rem;
+    font-weight: 700;
+    box-shadow: 1.5px 1.5px 0px var(--color-charcoal);
+    transition: var(--transition-pristine);
+}
+
+.action-btn:hover {
+    border-color: var(--color-jade);
+    background: rgba(12, 60, 38, 0.04);
+    color: var(--color-jade);
+    transform: translate(-0.5px, -0.5px);
+    box-shadow: 2px 2px 0px var(--color-charcoal);
+}
+
+.act-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Bento Block 3: Property Listing Catalog */
+.bento-listing {
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--color-card-bg);
+    border-color: var(--color-charcoal);
+    cursor: default;
+}
+
+.listing-banner {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+    width: 100%;
+    border-bottom: 1px solid var(--color-charcoal);
+}
+
+.listing-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.bento-listing:hover .listing-img {
+    transform: scale(1.05);
+}
+
+.listing-price {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--color-charcoal);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.listing-body {
+    padding: 14px 16px 16px;
+}
+
+.listing-badge {
+    font-size: 0.56rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    background-color: rgba(176, 139, 71, 0.08);
+    border: 1px solid rgba(176, 139, 71, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.listing-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    line-height: 1.15;
+}
+
+.listing-loc {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+}
+
+.listing-specs {
+    display: flex;
+    gap: 12px;
+    font-size: 0.7rem;
+    color: var(--color-charcoal);
+    margin-top: 10px;
+    border-top: 1.2px dashed rgba(21, 21, 24, 0.1);
+    padding-top: 8px;
+    font-weight: 700;
+}
+
+/* Bento Block 4: Navigation triggers to slide sub-screens */
+.bento-nav-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    background-color: var(--color-card-bg);
+}
+
+.nav-card-icon {
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: #fbfbf7;
+    border: 1px solid var(--color-charcoal);
+}
+
+.bento-nav-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+}
+
+.bento-nav-card p {
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    margin-top: 1px;
+}
+
+.nav-arrow {
+    margin-left: auto;
+    color: var(--color-gold);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.bento-nav-card:hover .nav-arrow {
+    transform: translateX(4px);
+}
+
+/* ------------------------------------------------------------- */
+/* SPA PANEL TRIGGER OVERLAYS */
+/* ------------------------------------------------------------- */
+input[name="pristine-tab"] {
+    display: none;
+}
+
+.estate-sub-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: var(--transition-pristine);
+    pointer-events: none;
+}
+
+/* Checked triggers */
+#pris-calc-trigger:checked ~ .app-viewport #pristine-calc-screen,
+#pris-contact-trigger:checked ~ .app-viewport #pristine-contact-screen {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* Screen headers */
+.screen-header {
+    height: 56px;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(21, 21, 24, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 36px;
+}
+
+.back-btn {
+    font-size: 0.76rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    cursor: pointer;
+    user-select: none;
+}
+
+.back-btn:hover {
+    color: var(--color-charcoal);
+}
+
+.screen-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+}
+
+.screen-content {
+    padding: 20px 16px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.calc-intro {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+/* Sub Form components */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-charcoal);
+    color: var(--color-charcoal);
+    font-family: inherit;
+    font-size: 0.82rem;
+    transition: var(--transition-pristine);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-jade);
+    background-color: #fbfbf7;
+}
+
+.form-group select option {
+    background-color: var(--color-card-bg);
+    color: var(--color-charcoal);
+}
+
+/* Jade Green Calculation results container */
+.calc-results-box {
+    margin-top: 1.5rem;
+    background-color: var(--color-jade);
+    border: 1px solid var(--color-charcoal);
+    border-radius: 20px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 0px var(--color-charcoal);
+}
+
+.res-lbl {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+}
+
+.res-val {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+.res-note {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 6px;
+}
+
+/* Solid charcoal submit buttons */
+.estate-submit-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    background-color: var(--color-charcoal);
+    color: #ffffff;
+    border: 1px solid var(--color-charcoal);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--color-charcoal);
+    transition: var(--transition-pristine);
+    margin-top: 1rem;
+}
+
+.estate-submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE FULLSCREEN FOR MOBILES */
+/* ------------------------------------------------------------- */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background-color: var(--color-bg);
+    }
+    
+    .smartphone-shell-pristine {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .smartphone-speaker,
+    .smartphone-camera {
+        display: none;
+    }
+
+    .smartphone-status-bar {
+        height: 48px;
+        padding-top: 18px;
+    }
+
+    .bento-container {
+        padding-top: 50px;
+    }
+}

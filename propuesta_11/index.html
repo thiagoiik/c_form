@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Conversational Realtor Chat SPA</title>
+    <meta name="description" content="Propuesta 11: Tarjeta digital móvil SPA interactiva en formato de Chat Conversacional de Lujo para Bienes Raíces en CSS puro.">
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Outer Premium Smartphone Shell Mockup -->
+    <div class="smartphone-shell-chat">
+        <div class="smartphone-speaker"></div>
+        <div class="smartphone-camera"></div>
+        
+        <!-- Mock Status Bar -->
+        <div class="smartphone-status-bar">
+            <span class="status-time">14:15</span>
+            <div class="status-icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <path d="M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M1.5 9.5a15 15 0 0 1 21 0"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <rect width="16" height="10" x="2" y="7" rx="1.5"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- PURE CSS CHAT STATE MACHINE (RADIO TRIGGERS) -->
+        <!-- ------------------------------------------------------------- -->
+        <input type="radio" name="chat-flow" id="flow-start-trigger" checked>
+        <input type="radio" name="chat-flow" id="flow-villas-trigger">
+        <input type="radio" name="chat-flow" id="flow-pent-trigger">
+        <input type="radio" name="chat-flow" id="flow-contact-trigger">
+
+        <!-- App Viewport Container (Obsidian Chat Canvas) -->
+        <div class="app-viewport">
+            
+            <!-- CHAT HEADER BAR (Luxury Emerald Theme) -->
+            <div class="chat-header">
+                <div class="header-avatar-area">
+                    <div class="header-avatar">
+                        <img src="avatar.png" alt="Thiago Agent" class="hatar-img">
+                    </div>
+                    <span class="active-dot"></span>
+                </div>
+                <div class="header-info">
+                    <span class="hat-name">Thiago</span>
+                    <span class="hat-status">Asesor Personal • En Línea</span>
+                </div>
+                <div class="header-actions">
+                    <a href="tel:+5255555555" class="header-call-btn" aria-label="Llamar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="hc-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CHAT MESSAGE CONVERSATION FEED -->
+            <div class="chat-feed" id="chat-scroller">
+                
+                <!-- 1. START BLOCKS (Always Visible) -->
+                <div class="msg-block received flow-start-msg">
+                    <div class="msg-bubble">
+                        ¡Hola! Qué gusto saludarte. Bienvenido a mi canal interactivo exclusivo. 🏛️
+                    </div>
+                    <span class="msg-time">14:15</span>
+                </div>
+
+                <div class="msg-block received flow-start-msg">
+                    <div class="msg-bubble">
+                        Estoy aquí para presentarte mis propiedades exclusivas y ayudarte a agendar recorridos de forma directa. ¿Qué tipo de inversión buscas explorar hoy?
+                    </div>
+                    <span class="msg-time">14:15</span>
+                </div>
+
+                <!-- 2. CONDITIONAL BLOCKS: VILLAS OPTION SELECTED -->
+                <div class="flow-villas-group">
+                    <div class="msg-block sent">
+                        <div class="msg-bubble">
+                            🌲 Villas de Descanso Exclusivas
+                        </div>
+                        <span class="msg-time">Justo ahora</span>
+                    </div>
+
+                    <div class="msg-block received">
+                        <div class="msg-bubble">
+                            Excelente elección. Te presento nuestra joya arquitectónica actual en Valle de Bravo:
+                        </div>
+                    </div>
+
+                    <!-- Luxury Property Card Bubble -->
+                    <div class="msg-block received property-card-msg">
+                        <div class="msg-property-card">
+                            <div class="prop-banner">
+                                <img src="luxury_villa.png" alt="Luxury Villa" class="prop-img">
+                                <span class="prop-price">$1,850,000 USD</span>
+                            </div>
+                            <div class="prop-info">
+                                <span class="prop-badge">Destacada</span>
+                                <h3>Villa Lumina - Valle de Bravo</h3>
+                                <p>📍 Av. del Lago 142, Estado de México</p>
+                                <div class="prop-specs">
+                                    <span>🛏️ 4 Hab</span>
+                                    <span>🚿 4.5 Baños</span>
+                                    <span>📐 580 m²</span>
+                                </div>
+                                <label for="flow-contact-trigger" class="prop-action-lbl">🗝️ Agendar Recorrido Privado</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. CONDITIONAL BLOCKS: PENTHOUSES OPTION SELECTED -->
+                <div class="flow-pent-group">
+                    <div class="msg-block sent">
+                        <div class="msg-bubble">
+                            🏙️ Penthouses Urbanos de Lujo
+                        </div>
+                        <span class="msg-time">Justo ahora</span>
+                    </div>
+
+                    <div class="msg-block received">
+                        <div class="msg-bubble">
+                            Entendido. Actualmente gestionamos este exclusivo desarrollo residencial en CDMX:
+                        </div>
+                    </div>
+
+                    <!-- Luxury Penthouse Card Bubble (CSS Mockup Illustration) -->
+                    <div class="msg-block received property-card-msg">
+                        <div class="msg-property-card">
+                            <div class="prop-banner mock-penthouse-banner">
+                                <div class="mock-skyline">
+                                    <div class="mock-tower tower-1"></div>
+                                    <div class="mock-tower tower-2"></div>
+                                    <div class="mock-tower tower-3"></div>
+                                </div>
+                                <span class="prop-price">$2,450,000 USD</span>
+                            </div>
+                            <div class="prop-info">
+                                <span class="prop-badge">Exclusivo</span>
+                                <h3>Sky Penthouse - Polanco</h3>
+                                <p>📍 Campos Elíseos 480, Ciudad de México</p>
+                                <div class="prop-specs">
+                                    <span>🛏️ 3 Hab</span>
+                                    <span>🚿 3.5 Baños</span>
+                                    <span>📐 420 m²</span>
+                                </div>
+                                <label for="flow-contact-trigger" class="prop-action-lbl">🗝️ Agendar Recorrido Privado</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. CONDITIONAL BLOCKS: CONTACT FORM OPTION SELECTED -->
+                <div class="flow-contact-group">
+                    <div class="msg-block sent">
+                        <div class="msg-bubble">
+                            📅 Coordinar Recorrido Privado
+                        </div>
+                        <span class="msg-time">Justo ahora</span>
+                    </div>
+
+                    <div class="msg-block received">
+                        <div class="msg-bubble">
+                            Perfecto. Para coordinar una cita privada y enviar tu pase de acceso, comparte tus datos directamente aquí en el chat:
+                        </div>
+                    </div>
+
+                    <!-- Interactive Form Bubble inside Chat Stream -->
+                    <div class="msg-block received chat-form-msg">
+                        <form class="chat-embedded-form" onsubmit="return false;">
+                            <div class="chat-form-group">
+                                <input type="text" placeholder="Escribe tu nombre completo..." required>
+                            </div>
+                            <div class="chat-form-group">
+                                <input type="tel" placeholder="Tu número de celular..." required>
+                            </div>
+                            <div class="chat-form-group">
+                                <input type="date" required>
+                            </div>
+                            <button type="submit" class="chat-submit-btn">
+                                <span>Solicitar Visita 🗝️</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CHAT INTERACTIVE CHIP SELECTOR BAR (THE MENU BUTTONS AT THE BASE) -->
+            <div class="chat-controls-area">
+                <span class="controls-hint">Selecciona una opción para interactuar:</span>
+                
+                <div class="controls-chips-wrapper">
+                    <!-- Chip option 1: Open Villas -->
+                    <label for="flow-villas-trigger" class="control-chip chip-villas">
+                        <span>🌲 Villas de Campo</span>
+                    </label>
+
+                    <!-- Chip option 2: Open Penthouses -->
+                    <label for="flow-pent-trigger" class="control-chip chip-penthouses">
+                        <span>🏙️ Penthouses Urbanos</span>
+                    </label>
+
+                    <!-- Chip option 3: Open Contact -->
+                    <label for="flow-contact-trigger" class="control-chip chip-contact">
+                        <span>📅 Agendar Recorrido</span>
+                    </label>
+
+                    <!-- Chip option 4: Reset Chat -->
+                    <label for="flow-start-trigger" class="control-chip chip-reset">
+                        <span>🔄 Reiniciar</span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="smartphone-home-indicator"></div>
+    </div>
+
+    <!-- Script connection (Mock JS with comments as requested) -->
+    <script src="app.js"></script>
+</body>
+</html>

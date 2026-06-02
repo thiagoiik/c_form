@@ -1,0 +1,626 @@
+/* CSS Premium para Smartphone SPA Neo-Brutalist Stories (Propuesta 6) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&display=swap');
+
+:root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Theme colors - High-Contrast Bold Brutalism */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-lavender: #e6e1ff;
+    --color-mint: #d1fae5;
+    --color-amber: #fef3c7;
+    --color-coral: #ffebe5;
+    
+    --color-neon-yellow: #adff2f;
+    --color-neon-pink: #ff60b5;
+    --color-neon-blue: #a5f3fc;
+
+    --transition-brutal: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+/* Reset and architecture lines */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #faf9f6;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--color-black);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* BOLD NEO-BRUTALIST SMARTPHONE SHELL */
+/* ------------------------------------------------------------- */
+.smartphone-shell-brutal {
+    width: 375px;
+    height: 812px;
+    border: 12px solid var(--color-black);
+    border-radius: 44px;
+    background-color: var(--color-white);
+    box-shadow: 12px 12px 0px var(--color-black);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Solid Black speaker notch */
+.smartphone-speaker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 24px;
+    background-color: var(--color-black);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 150;
+}
+
+/* High Contrast status bar */
+.smartphone-status-bar {
+    height: 40px;
+    padding: 14px 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-black);
+    z-index: 120;
+    user-select: none;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.smartphone-home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 5px;
+    background-color: var(--color-black);
+    border-radius: 10px;
+    z-index: 150;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------- */
+/* SEGMENTED PROGRESS BARS OUTLINED IN BLACK */
+/* ------------------------------------------------------------- */
+.story-progress-bar {
+    position: absolute;
+    top: 48px;
+    left: 14px;
+    right: 14px;
+    height: 8px;
+    display: flex;
+    gap: 4px;
+    z-index: 120;
+}
+
+.progress-segment {
+    flex: 1;
+    height: 100%;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-black);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-neon-yellow);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------- */
+/* PURE CSS RADIO STATE SHIFTS */
+/* ------------------------------------------------------------- */
+input[name="brutal-story-tab"] {
+    display: none;
+}
+
+/* Progress filling checked triggers */
+#slide-1-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill { width: 100%; }
+
+#slide-2-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill,
+#slide-2-trigger:checked ~ .story-progress-bar #seg-2 .progress-fill { width: 100%; }
+
+#slide-3-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill,
+#slide-3-trigger:checked ~ .story-progress-bar #seg-2 .progress-fill,
+#slide-3-trigger:checked ~ .story-progress-bar #seg-3 .progress-fill { width: 100%; }
+
+#slide-4-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill,
+#slide-4-trigger:checked ~ .story-progress-bar #seg-2 .progress-fill,
+#slide-4-trigger:checked ~ .story-progress-bar #seg-3 .progress-fill,
+#slide-4-trigger:checked ~ .story-progress-bar #seg-4 .progress-fill { width: 100%; }
+
+/* ------------------------------------------------------------- */
+/* PURE CSS TAP OVERLAYS */
+/* ------------------------------------------------------------- */
+.tap-navigator-left {
+    position: absolute;
+    top: 60px;
+    bottom: 40px;
+    left: 0;
+    width: 25%;
+    z-index: 100;
+}
+
+.tap-navigator-right {
+    position: absolute;
+    top: 60px;
+    bottom: 40px;
+    right: 0;
+    width: 75%;
+    z-index: 100;
+}
+
+.nav-target {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    cursor: pointer;
+}
+
+#slide-1-trigger:checked ~ .tap-navigator-right .target-to-2 { display: block; }
+
+#slide-2-trigger:checked ~ .tap-navigator-left .target-to-1 { display: block; }
+#slide-2-trigger:checked ~ .tap-navigator-right .target-to-3 { display: block; }
+
+#slide-3-trigger:checked ~ .tap-navigator-left .target-to-2 { display: block; }
+#slide-3-trigger:checked ~ .tap-navigator-right .target-to-4 { display: block; }
+
+#slide-4-trigger:checked ~ .tap-navigator-left .target-to-3 { display: block; }
+
+/* ------------------------------------------------------------- */
+/* SLIDING DECK HORIZONTAL TRANSFORMS */
+/* ------------------------------------------------------------- */
+.app-viewport {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.story-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4.5rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: var(--transition-brutal);
+    background-size: 14px 14px;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* Make active slide visible */
+#slide-1-trigger:checked ~ .app-viewport #story-slide-1,
+#slide-2-trigger:checked ~ .app-viewport #story-slide-2,
+#slide-3-trigger:checked ~ .app-viewport #story-slide-3,
+#slide-4-trigger:checked ~ .app-viewport #story-slide-4 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Slides passed are sent left */
+#slide-2-trigger:checked ~ .app-viewport #story-slide-1 { transform: translateX(-100%); }
+
+#slide-3-trigger:checked ~ .app-viewport #story-slide-1,
+#slide-3-trigger:checked ~ .app-viewport #story-slide-2 { transform: translateX(-100%); }
+
+#slide-4-trigger:checked ~ .app-viewport #story-slide-1,
+#slide-4-trigger:checked ~ .app-viewport #story-slide-2,
+#slide-4-trigger:checked ~ .app-viewport #story-slide-3 { transform: translateX(-100%); }
+
+/* Pastel solid colors for the slides */
+#story-slide-1 { background-color: var(--color-lavender); }
+#story-slide-2 { background-color: var(--color-mint); }
+#story-slide-3 { background-color: var(--color-amber); }
+#story-slide-4 { background-color: var(--color-coral); }
+
+.story-slide-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+/* ------------------------------------------------------------- */
+/* BRUTALIST SUB-COMPONENTS */
+/* ------------------------------------------------------------- */
+
+/* Shared rigid outline badges */
+.slide-badge {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    border: 2px solid var(--color-black);
+    border-radius: 4px;
+    width: fit-content;
+    margin-bottom: 2rem;
+    box-shadow: 2.5px 2.5px 0px var(--color-black);
+}
+
+.badge-lavender { background-color: var(--color-neon-pink); color: var(--color-black); }
+.badge-mint { background-color: var(--color-neon-blue); color: var(--color-black); }
+.badge-amber { background-color: var(--color-neon-yellow); color: var(--color-black); }
+.badge-coral { background-color: var(--color-neon-pink); color: var(--color-black); }
+
+/* Typography */
+.slide-heading {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+}
+
+.slide-desc {
+    font-size: 0.85rem;
+    color: var(--color-black);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* 1. Identity Component settings */
+.story-avatar-container {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 2rem;
+}
+
+.story-avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3.5px solid var(--color-black);
+    box-shadow: 6px 6px 0px var(--color-black);
+}
+
+.status-dot {
+    position: absolute;
+    bottom: 14px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--color-neon-yellow);
+    border: 3px solid var(--color-black);
+}
+
+.story-title {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--color-black);
+    letter-spacing: -0.01em;
+}
+
+.story-job {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--color-black);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-black);
+    padding: 3px 10px;
+    width: fit-content;
+    margin: 0.25rem auto 0;
+    box-shadow: 2px 2px 0px var(--color-black);
+}
+
+.story-desc {
+    font-size: 0.85rem;
+    color: var(--color-black);
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0 5px;
+    font-weight: 600;
+}
+
+.swipe-hint {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    color: var(--color-black);
+    margin-top: auto;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.pulse-arrow {
+    display: inline-block;
+    animation: arrowPush 0.6s infinite alternate;
+}
+
+@keyframes arrowPush {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(4px); }
+}
+
+/* 2. Stats Slide Components */
+.story-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.story-stat-card {
+    background: var(--color-white);
+    border: 2.5px solid var(--color-black);
+    border-radius: 8px;
+    padding: 10px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 0px var(--color-black);
+}
+
+.story-stat-card .val {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.story-stat-card .lbl {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--color-black);
+    text-transform: uppercase;
+}
+
+.story-skills-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skills-subgroup h3 {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.s-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--color-white);
+    border: 2px solid var(--color-black);
+    box-shadow: 2px 2px 0px var(--color-black);
+}
+
+/* 3. Portfolio project cards */
+.story-portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.story-proj-card {
+    background: var(--color-white);
+    border: 2.5px solid var(--color-black);
+    border-radius: 12px;
+    padding: 1.15rem;
+    box-shadow: 4px 4px 0px var(--color-black);
+}
+
+.p-category {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-black);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.story-proj-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.story-proj-card p {
+    font-size: 0.78rem;
+    color: var(--color-black);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.p-tags {
+    display: flex;
+    gap: 6px;
+}
+
+.p-tags span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2.5px 6px;
+    border-radius: 4px;
+    background-color: var(--color-white);
+    border: 1.5px solid var(--color-black);
+}
+
+/* 4. Form inputs settings */
+.story-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
+}
+
+.story-input-wrapper input,
+.story-input-wrapper textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    border: 2.5px solid var(--color-black);
+    color: var(--color-black);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: inset 2px 2px 0px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+.story-input-wrapper input:focus,
+.story-input-wrapper textarea:focus {
+    outline: none;
+    background-color: var(--color-white);
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0px var(--color-black);
+}
+
+.story-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px;
+    border-radius: 8px;
+    border: 2.5px solid var(--color-black);
+    background-color: var(--color-neon-blue);
+    color: var(--color-black);
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--color-black);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.story-submit-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--color-black);
+}
+
+.story-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.s-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--color-black);
+}
+
+.story-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 2.5px solid var(--color-black);
+    box-shadow: 3px 3px 0px var(--color-black);
+    transition: transform 0.2s ease;
+}
+
+.story-social-icons a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--color-black);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE FULLSCREEN FOR MOBILES */
+/* ------------------------------------------------------------- */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background-color: var(--color-white);
+    }
+    
+    .smartphone-shell-brutal {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .smartphone-speaker,
+    .smartphone-camera {
+        display: none;
+    }
+
+    .smartphone-status-bar {
+        height: 48px;
+        padding-top: 18px;
+    }
+
+    .story-progress-bar {
+        top: 54px;
+    }
+
+    .story-slide {
+        padding-top: 5rem;
+    }
+}

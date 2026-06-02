@@ -1,0 +1,599 @@
+/* CSS Premium para Smartphone SPA Instagram Stories (Propuesta 5) */
+:root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Theme colors - High-Contrast Dark Atmospheric */
+    --border-dark: #1e1f2b;
+    --text-bright: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.65);
+    
+    /* ------------------------------------------------------------- */
+    /* STORY CANVAS THEMES (Delimiting elements by solid gradients) */
+    /* ------------------------------------------------------------- */
+    --story-gradient-1: linear-gradient(180deg, #32234e 0%, #0d0617 100%); /* Identity */
+    --story-gradient-2: linear-gradient(180deg, #0e3025 0%, #030d0a 100%); /* Stats/Skills */
+    --story-gradient-3: linear-gradient(180deg, #39260d 0%, #110902 100%); /* Projects */
+    --story-gradient-4: linear-gradient(180deg, #44171f 0%, #150508 100%); /* Contact */
+
+    --color-indigo: #818cf8;
+    --color-emerald: #34d399;
+    --color-gold: #fbbf24;
+    --color-coral: #f87171;
+
+    --transition-story: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
+}
+
+/* Reset and structure setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #05060b;
+    color: var(--text-bright);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* SMARTPHONE CONTAINER SHELL */
+/* ------------------------------------------------------------- */
+.smartphone-shell {
+    width: 375px;
+    height: 812px;
+    border: 12px solid var(--border-dark);
+    border-radius: 44px;
+    background-color: #000000;
+    box-shadow: 
+        0px 25px 50px -12px rgba(0, 0, 0, 0.8),
+        0 0 0 4px #101117;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Speaker notch */
+.smartphone-speaker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 24px;
+    background-color: var(--border-dark);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    z-index: 150;
+}
+
+/* Clock status bar */
+.smartphone-status-bar {
+    height: 40px;
+    padding: 14px 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    z-index: 120;
+    user-select: none;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.smartphone-home-indicator {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    z-index: 150;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------- */
+/* INSTAGRAM-STYLE STORY INDICATOR SEGMENTS */
+/* ------------------------------------------------------------- */
+.story-progress-bar {
+    position: absolute;
+    top: 48px;
+    left: 14px;
+    right: 14px;
+    height: 3px;
+    display: flex;
+    gap: 4px;
+    z-index: 120;
+}
+
+.progress-segment {
+    flex: 1;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: width 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+/* ------------------------------------------------------------- */
+/* PURE CSS RADIO STATE SHIFTS */
+/* ------------------------------------------------------------- */
+input[name="story-spa-tab"] {
+    display: none;
+}
+
+/* Progress filling based on active slide triggers */
+#slide-1-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill { width: 100%; }
+
+#slide-2-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill,
+#slide-2-trigger:checked ~ .story-progress-bar #seg-2 .progress-fill { width: 100%; }
+
+#slide-3-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill,
+#slide-3-trigger:checked ~ .story-progress-bar #seg-2 .progress-fill,
+#slide-3-trigger:checked ~ .story-progress-bar #seg-3 .progress-fill { width: 100%; }
+
+#slide-4-trigger:checked ~ .story-progress-bar #seg-1 .progress-fill,
+#slide-4-trigger:checked ~ .story-progress-bar #seg-2 .progress-fill,
+#slide-4-trigger:checked ~ .story-progress-bar #seg-3 .progress-fill,
+#slide-4-trigger:checked ~ .story-progress-bar #seg-4 .progress-fill { width: 100%; }
+
+/* ------------------------------------------------------------- */
+/* PURE CSS TAP NAVIGATION OVERLAYS */
+/* Left side takes 28% width to go back; Right takes 72% to go forward */
+/* ------------------------------------------------------------- */
+.tap-navigator-left {
+    position: absolute;
+    top: 60px;
+    bottom: 40px;
+    left: 0;
+    width: 28%;
+    z-index: 100;
+}
+
+.tap-navigator-right {
+    position: absolute;
+    top: 60px;
+    bottom: 40px;
+    right: 0;
+    width: 72%;
+    z-index: 100;
+}
+
+.nav-target {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    cursor: pointer;
+}
+
+/* Enabling corresponding labels sequentially */
+#slide-1-trigger:checked ~ .tap-navigator-right .target-to-2 { display: block; }
+
+#slide-2-trigger:checked ~ .tap-navigator-left .target-to-1 { display: block; }
+#slide-2-trigger:checked ~ .tap-navigator-right .target-to-3 { display: block; }
+
+#slide-3-trigger:checked ~ .tap-navigator-left .target-to-2 { display: block; }
+#slide-3-trigger:checked ~ .tap-navigator-right .target-to-4 { display: block; }
+
+#slide-4-trigger:checked ~ .tap-navigator-left .target-to-3 { display: block; }
+
+/* ------------------------------------------------------------- */
+/* STORY CAROUSEL VIEWPORT PANELS */
+/* ------------------------------------------------------------- */
+.app-viewport {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.story-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4.5rem 1.5rem 2rem; /* Generous padding to clear notch & bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: var(--transition-story);
+}
+
+/* Selecting active slide: centers card */
+#slide-1-trigger:checked ~ .app-viewport #story-slide-1,
+#slide-2-trigger:checked ~ .app-viewport #story-slide-2,
+#slide-3-trigger:checked ~ .app-viewport #story-slide-3,
+#slide-4-trigger:checked ~ .app-viewport #story-slide-4 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Sending previous slide cards off viewport left */
+#slide-2-trigger:checked ~ .app-viewport #story-slide-1 { transform: translateX(-100%); }
+
+#slide-3-trigger:checked ~ .app-viewport #story-slide-1,
+#slide-3-trigger:checked ~ .app-viewport #story-slide-2 { transform: translateX(-100%); }
+
+#slide-4-trigger:checked ~ .app-viewport #story-slide-1,
+#slide-4-trigger:checked ~ .app-viewport #story-slide-2,
+#slide-4-trigger:checked ~ .app-viewport #story-slide-3 { transform: translateX(-100%); }
+
+/* Story Canvas background solid definitions */
+#story-slide-1 { background: var(--story-gradient-1); }
+#story-slide-2 { background: var(--story-gradient-2); }
+#story-slide-3 { background: var(--story-gradient-3); }
+#story-slide-4 { background: var(--story-gradient-4); }
+
+.story-slide-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+/* ------------------------------------------------------------- */
+/* SLIDE COMPONENT STYLING */
+/* ------------------------------------------------------------- */
+
+/* Shared micro badges */
+.slide-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+.badge-indigo { background: rgba(129, 140, 248, 0.15); color: var(--color-indigo); }
+.badge-emerald { background: rgba(52, 211, 153, 0.15); color: var(--color-emerald); }
+.badge-gold { background: rgba(251, 191, 36, 0.15); color: var(--color-gold); }
+.badge-coral { background: rgba(248, 113, 113, 0.15); color: var(--color-coral); }
+
+/* Slide typography */
+.slide-heading {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-bright);
+}
+
+.slide-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* 1. Slide Identity Components */
+.story-avatar-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-avatar-halo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.25) 0%, transparent 70%);
+    animation: pulseHalo 4s infinite alternate ease-in-out;
+}
+
+.story-avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* PERFECT CIRCLE */
+    object-fit: cover;
+    border: 3.5px solid var(--text-bright);
+    z-index: 5;
+}
+
+@keyframes pulseHalo {
+    0% { transform: scale(0.9); opacity: 0.5; }
+    100% { transform: scale(1.15); opacity: 1; }
+}
+
+.story-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-bright);
+    letter-spacing: -0.01em;
+}
+
+.story-job {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-indigo);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+
+.story-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 1.25rem;
+    padding: 0 10px;
+}
+
+.swipe-hint {
+    text-align: center;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: auto;
+    font-weight: 700;
+    animation: hintFloat 2s infinite ease-in-out;
+}
+
+.pulse-hand {
+    display: inline-block;
+    animation: handWiggle 1s infinite alternate;
+}
+
+@keyframes hintFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+@keyframes handWiggle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(15deg); }
+}
+
+/* 2. Slide Stats Components */
+.story-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+.story-stat-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 12px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.story-stat-card .val {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-emerald);
+}
+
+.story-stat-card .lbl {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.story-skills-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skills-subgroup h3 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-emerald);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.s-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* 3. Slide Projects list */
+.story-portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.story-proj-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    padding: 1.25rem;
+}
+
+.p-category {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.story-proj-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-bright);
+    margin-bottom: 4px;
+}
+
+.story-proj-card p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.p-tags {
+    display: flex;
+    gap: 6px;
+}
+
+.p-tags span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* 4. Slide Contact Form components */
+.story-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.story-input-wrapper input,
+.story-input-wrapper textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-bright);
+    font-family: inherit;
+    font-size: 0.82rem;
+    transition: border 0.3s ease;
+}
+
+.story-input-wrapper input:focus,
+.story-input-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--color-coral);
+    background-color: rgba(0,0,0,0.5);
+}
+
+.story-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, var(--color-coral), #ef4444);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(248, 113, 113, 0.2);
+}
+
+.story-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+}
+
+.s-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--text-muted);
+    transition: color 0.25s ease;
+}
+
+.story-social-icons a:hover .s-icon {
+    color: var(--text-bright);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE FULLSCREEN FOR PORTRAIT MOBILES */
+/* ------------------------------------------------------------- */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        background-color: #000000;
+    }
+    
+    .smartphone-shell {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .smartphone-speaker,
+    .smartphone-camera {
+        display: none;
+    }
+
+    .smartphone-status-bar {
+        height: 48px;
+        padding-top: 18px;
+        color: #ffffff;
+    }
+
+    .story-progress-bar {
+        top: 54px;
+    }
+
+    .story-slide {
+        padding-top: 5rem;
+    }
+}

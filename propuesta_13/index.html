@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Personal Brand Swipe Deck</title>
+    <meta name="description" content="Propuesta 13: Tarjeta digital SPA para Marca Personal en formato de mazo de cartas tridimensional deslizante en CSS puro.">
+    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Outer Premium Clay Gold Smartphone Shell Mockup -->
+    <div class="smartphone-shell-deck">
+        <div class="smartphone-speaker"></div>
+        <div class="smartphone-camera"></div>
+        
+        <!-- Mock Status Bar (High Contrast Dark Text) -->
+        <div class="smartphone-status-bar">
+            <span class="status-time">14:20</span>
+            <div class="status-icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <path d="M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M1.5 9.5a15 15 0 0 1 21 0"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="status-icon">
+                    <rect width="16" height="10" x="2" y="7" rx="1.5"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------------------- -->
+        <!-- PURE CSS DECK SWIPING STATE MACHINE (RADIO TRIGGERS) -->
+        <!-- ------------------------------------------------------------- -->
+        <input type="radio" name="deck-flow" id="deck-card-1" checked>
+        <input type="radio" name="deck-flow" id="deck-card-2">
+        <input type="radio" name="deck-flow" id="deck-card-3">
+        <input type="radio" name="deck-flow" id="deck-card-4">
+
+        <!-- App Viewport Container (Tuscan Warm Canvas) -->
+        <div class="app-viewport">
+            
+            <!-- TOP BRAND HEADER -->
+            <div class="deck-brand-header">
+                <span class="brand-badge">MARCA PERSONAL</span>
+                <h2 class="brand-monogram">T • A</h2>
+            </div>
+
+            <!-- ------------------------------------------------------------- -->
+            <!-- 3D INTERACTIVE CARD DECK STACK -->
+            <!-- ------------------------------------------------------------- -->
+            <div class="deck-container">
+                
+                <!-- CARD 1: BIO & METRICS -->
+                <div class="deck-card c-1">
+                    <div class="card-top-header">
+                        <span class="card-num">01 / 04</span>
+                        <span class="card-tag">Identidad</span>
+                    </div>
+
+                    <div class="card-profile-area">
+                        <div class="avatar-deck-frame">
+                            <img src="avatar.png" alt="Thiago Avatar" class="avatar-deck-img">
+                        </div>
+                        <div class="profile-text">
+                            <h1 class="creator-name">Thiago</h1>
+                            <p class="creator-subtitle">Estratega de Marca & Consultor</p>
+                        </div>
+                    </div>
+
+                    <p class="creator-bio">
+                        Ayudo a líderes de opinión, mentores y creadores premium a estructurar, escalar y monetizar su autoridad digital mediante contenido estratégico de alto impacto visual.
+                    </p>
+
+                    <!-- Stats Row -->
+                    <div class="creator-stats-row">
+                        <div class="stat-box">
+                            <span class="stat-num">+150</span>
+                            <span class="stat-lbl">Marcas Auditadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">+10k</span>
+                            <span class="stat-lbl">Alumnos</span>
+                        </div>
+                    </div>
+
+                    <label for="deck-card-2" class="deck-card-action-btn">
+                        <span>Ver Mis Servicios 👉</span>
+                    </label>
+                </div>
+
+                <!-- CARD 2: PREMIUM SERVICES -->
+                <div class="deck-card c-2">
+                    <div class="card-top-header">
+                        <span class="card-num">02 / 04</span>
+                        <span class="card-tag">Servicios</span>
+                    </div>
+
+                    <h2 class="section-title">Ecosistema Premium</h2>
+                    <p class="section-desc">Estructuras de acompañamiento estratégico diseñadas para acelerar tu autoridad digital:</p>
+
+                    <div class="services-list-wrapper">
+                        <!-- Service Item 1 -->
+                        <div class="service-item">
+                            <div class="service-num">I</div>
+                            <div class="service-body">
+                                <h3>Consultoría Estratégica 1-1</h3>
+                                <p>Auditoría completa de tu identidad visual y plan de posicionamiento.</p>
+                            </div>
+                        </div>
+
+                        <!-- Service Item 2 -->
+                        <div class="service-item">
+                            <div class="service-num">II</div>
+                            <div class="service-body">
+                                <h3>Lanzamiento de Marca Personal</h3>
+                                <p>Soporte llave en mano para estructurar tu oferta y captar leads.</p>
+                            </div>
+                        </div>
+
+                        <!-- Service Item 3 -->
+                        <div class="service-item">
+                            <div class="service-num">III</div>
+                            <div class="service-body">
+                                <h3>Contenido de Alto Valor</h3>
+                                <p>Diseño de guiones y dirección de arte para retención masiva.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="deck-card-3" class="deck-card-action-btn">
+                        <span>Ver Casos de Éxito 👉</span>
+                    </label>
+                </div>
+
+                <!-- CARD 3: TESTIMONIALS / PROOF -->
+                <div class="deck-card c-3">
+                    <div class="card-top-header">
+                        <span class="card-num">03 / 04</span>
+                        <span class="card-tag">Resultados</span>
+                    </div>
+
+                    <h2 class="section-title">Testimonios de Impacto</h2>
+                    <p class="section-desc">Lo que dicen los líderes y creadores premium que han trabajado con nosotros:</p>
+
+                    <div class="testimonials-wrapper">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-bubble">
+                            <p class="t-quote">"Trabajar con Thiago transformó por completo cómo presento mi mentoría. Mis ventas de alto ticket aumentaron un 65% en 3 meses."</p>
+                            <span class="t-author">— Sofia Martinez, Creadora de Tecnología</span>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-bubble">
+                            <p class="t-quote">"La claridad visual y la estructura editorial que Thiago inyecta en cada proyecto es insuperable. Un antes y un después para mi marca."</p>
+                            <span class="t-author">— Daniel Vargas, Consultor de Negocios</span>
+                        </div>
+                    </div>
+
+                    <label for="deck-card-4" class="deck-card-action-btn">
+                        <span>Agendar Sesión de Diagnóstico 👉</span>
+                    </label>
+                </div>
+
+                <!-- CARD 4: BOOKING / CONTACT -->
+                <div class="deck-card c-4">
+                    <div class="card-top-header">
+                        <span class="card-num">04 / 04</span>
+                        <span class="card-tag">Contacto</span>
+                    </div>
+
+                    <h2 class="section-title">Agenda un Diagnóstico</h2>
+                    <p class="section-desc">Aplica para una sesión privada gratuita de 15 minutos para analizar tu marca personal:</p>
+
+                    <form class="deck-contact-form" onsubmit="return false;">
+                        <div class="deck-form-group">
+                            <input type="text" placeholder="Tu Nombre Completo..." required>
+                        </div>
+                        <div class="deck-form-group">
+                            <input type="tel" placeholder="Tu Teléfono / WhatsApp..." required>
+                        </div>
+                        <div class="deck-form-group">
+                            <input type="date" required>
+                        </div>
+
+                        <button type="submit" class="deck-submit-btn">
+                            <span>Solicitar Diagnóstico 🏛️</span>
+                        </button>
+                    </form>
+
+                    <label for="deck-card-1" class="deck-card-reset-lbl">
+                        <span>🔄 Reiniciar Mazo de Tarjetas</span>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- QUICK CONTACT SOCIAL DOCK AT THE BOTTOM -->
+            <div class="deck-social-dock">
+                <a href="tel:+5255555555" class="social-dock-link" aria-label="Llamar direct">📞</a>
+                <a href="https://wa.me/5255555555" target="_blank" rel="noopener" class="social-dock-link" aria-label="WhatsApp direct">💬</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-dock-link" aria-label="LinkedIn Profile">👔</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-dock-link" aria-label="Instagram Profile">📸</a>
+            </div>
+
+        </div>
+
+        <div class="smartphone-home-indicator"></div>
+    </div>
+
+    <!-- Script connection (Mock JS with comments as requested) -->
+    <script src="app.js"></script>
+</body>
+</html>
