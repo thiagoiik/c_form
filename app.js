@@ -4,20 +4,20 @@
 
 // 1. Proposal templates metadata
 const templates = [
-    { id: 1, name: "Propuesta 1: Deep Space Obsidian", style: "Neon Glow / Glassmorphism / Moderno", folder: "propuesta_1", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 2, name: "Propuesta 2: Neo-Brutalista Bouncy", style: "Bordes Gruesos / Colores Sólidos / Divertido", folder: "propuesta_2", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 3, name: "Propuesta 3: Smartphone Aura OS", style: "Pestañas Inferiores / Aura Glow / Sistema Móvil", folder: "propuesta_3", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 4, name: "Propuesta 4: Glassmorphic Floating Grid", style: "Vidrio Esmerilado / Flotante / Minimalista", folder: "propuesta_4", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 5, name: "Propuesta 5: Instagram Fluid Stories", style: "Historias / Navegación por Toques / Degradados", folder: "propuesta_5", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 6, name: "Propuesta 6: Neo-Brutalist Stories", style: "Historias / Contraste Duro / Estilos Revista", folder: "propuesta_6", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 7, name: "Propuesta 7: Cyberpunk Grid Terminal", style: "Consola Retro / Neon Activo / Ciberpunk", folder: "propuesta_7", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 8, name: "Propuesta 8: Minimal Light Premium", style: "Fondo Claro / Tipografía Fina / Elegante", folder: "propuesta_8", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 9, name: "Propuesta 9: Dark Horizon Minimal", style: "Horizontal / Centrado / Silencioso", folder: "propuesta_9", hasStats: true, hasSkills: true, hasProjects: false },
-    { id: 10, name: "Propuesta 10: Retro Synthwave", style: "Estilo 80s / Sol Ocaso / Líneas de Rejilla", folder: "propuesta_10", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 11, name: "Propuesta 11: Elegant Gold Executive", style: "Negro & Oro / Lujo / Diseños Simétricos", folder: "propuesta_11", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 12, name: "Propuesta 12: Creative Pop Art", style: "Colores Primarios / Lunares / Divertido", folder: "propuesta_12", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 13, name: "Propuesta 13: Clean Slate Tech", style: "Tarjetas Blancas / Sombras Suaves / Corporativo", folder: "propuesta_13", hasStats: true, hasSkills: true, hasProjects: true },
-    { id: 14, name: "Propuesta 14: Aurora Borealis Fluid", style: "Degradado Dinámico / Orgánico / Ondas", folder: "propuesta_14", hasStats: true, hasSkills: true, hasProjects: true }
+    { id: 1, name: "Modelo 1: Cósmico Moderno (Efecto Brillo)", style: "Fondo Oscuro / Vidrio Translúcido / Luces de Neón", folder: "propuesta_1", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 2, name: "Modelo 2: Urbano y Atrevido (Estilo Cómic)", style: "Bordes Gruesos / Bloques de Color / Animaciones Dinámicas", folder: "propuesta_2", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 3, name: "Modelo 3: Aplicación Móvil (Pestañas)", style: "Pestañas Inferiores / Estilo App de Celular / Brillo de Aura", folder: "propuesta_3", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 4, name: "Modelo 4: Vidrio Elegante (Esmerilado)", style: "Efecto Cristal / Tarjetas Flotantes / Fondo con Degradado", folder: "propuesta_4", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 5, name: "Modelo 5: Historias de Redes Sociales (Instagram)", style: "Formato Historia / Tocar para Avanzar / Degradados Fluidos", folder: "propuesta_5", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 6, name: "Modelo 6: Historias con Contraste Urbano", style: "Historias de Celular / Bordes Duros / Estilo Revista Moderna", folder: "propuesta_6", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 7, name: "Modelo 7: Consola Tecnológica (Estilo Retro)", style: "Estética Computadora / Luces de Neón / Ideal para Tecnología", folder: "propuesta_7", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 8, name: "Modelo 8: Minimalista Ejecutivo Claro", style: "Fondo Limpio Blanco / Tipografía Fina / Estética Elegante", folder: "propuesta_8", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 9, name: "Modelo 9: Horizonte Compacto y Sencillo", style: "Diseño Horizontal / Sin Pestañas / Resumen Directo", folder: "propuesta_9", hasStats: true, hasSkills: true, hasProjects: false },
+    { id: 10, name: "Modelo 10: Atardecer Retro Ochentas", style: "Estilo Ocaso / Rejillas de Neón / Colores Naranja y Morado", folder: "propuesta_10", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 11, name: "Modelo 11: Ejecutivo de Lujo (Oro y Negro)", style: "Detalles Dorados / Fondo Oscuro Sobrio / Ideal para Directivos", folder: "propuesta_11", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 12, name: "Modelo 12: Creativo Estilo Pop Art", style: "Colores Primarios / Fondo con Lunares / Divertido e Informal", folder: "propuesta_12", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 13, name: "Modelo 13: Corporativo Limpio Profesional", style: "Fondo Blanco Suave / Sombras Realistas / Tarjetas de Negocio", folder: "propuesta_13", hasStats: true, hasSkills: true, hasProjects: true },
+    { id: 14, name: "Modelo 14: Fluidez de Aurora Boreal", style: "Degradado Dinámico de Fondo / Formas Orgánicas / Ondas Suaves", folder: "propuesta_14", hasStats: true, hasSkills: true, hasProjects: true }
 ];
 
 // 2. DOM Selectors Mapping for Live Preview Synchronization
