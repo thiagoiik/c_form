@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Digital Business Card & Portfolio SPA</title>
+    <meta name="description" content="Tarjeta de presentación digital interactiva y maqueta SPA de alto impacto visual. Diseñador, Desarrollador y Arquitecto Digital.">
+    <!-- Google Fonts: Outfit (headings) & Plus Jakarta Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Link to our Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background elements for depth -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <div class="container">
+        <!-- SPA Card Container -->
+        <main class="card" id="main-card">
+            
+            <!-- HEADER SECTION (Theme: Indigo Accent) -->
+            <!-- We define its purpose and visual limits with an Indigo outline and glow -->
+            <header class="section-block element-profile" id="profile-header">
+                <span class="element-tag tag-indigo">Perfil / Identidad</span>
+                
+                <!-- Avatar Circular: Styled in a premium ring -->
+                <div class="avatar-container" id="avatar-wrapper">
+                    <div class="avatar-ring"></div>
+                    <img src="avatar.png" alt="Thiago Avatar" class="avatar-img" id="avatar-graphic">
+                </div>
+
+                <div class="profile-info">
+                    <h1 class="profile-name" id="profile-title">Thiago</h1>
+                    <p class="profile-title-text" id="profile-subtitle">Senior Full-Stack Developer & UI/UX Architect</p>
+                    <p class="profile-bio" id="profile-desc">Diseñando y desarrollando experiencias web interactivas de primer nivel. Especializado en interfaces dinámicas, robustez técnica y estética premium.</p>
+                </div>
+
+                <!-- Status Tags -->
+                <div class="status-tags" id="status-badges">
+                    <span class="badge badge-active"><span class="pulse-dot"></span>Disponible para proyectos</span>
+                    <span class="badge badge-remote">Remoto / Global</span>
+                </div>
+            </header>
+
+            <!-- STATISTICS SECTION (Theme: Emerald Accent) -->
+            <!-- Visually color-coded in green/emerald to signify metrics & results -->
+            <section class="section-block element-stats" id="stats-section">
+                <span class="element-tag tag-emerald">Métricas / Rendimiento</span>
+                <div class="stats-grid">
+                    <div class="stat-card" id="stat-experience">
+                        <span class="stat-value">8+</span>
+                        <span class="stat-label">Años de Exp.</span>
+                    </div>
+                    <div class="stat-card" id="stat-projects">
+                        <span class="stat-value">120+</span>
+                        <span class="stat-label">Proyectos Listos</span>
+                    </div>
+                    <div class="stat-card" id="stat-rating">
+                        <span class="stat-value">4.9★</span>
+                        <span class="stat-label">Valoración</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SOCIAL LINKS NAVIGATION (Theme: Rose Accent) -->
+            <!-- Visually color-coded in rose to represent connections and communication -->
+            <nav class="section-block element-socials" id="social-nav" aria-label="Redes Sociales">
+                <span class="element-tag tag-rose">Conectividad / Enlaces</span>
+                <div class="social-grid">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-github" id="social-github">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-linkedin" id="social-linkedin">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-twitter" id="social-twitter">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                        </svg>
+                        <span>Twitter</span>
+                    </a>
+
+                    <a href="mailto:hola@thiago.dev" class="social-btn btn-email" id="social-email">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- ABOUT ME & SKILLS SECTION (Theme: Sky Blue Accent) -->
+            <!-- Color-coded in sky blue to designate profile information and capabilities -->
+            <section class="section-block element-skills" id="skills-section">
+                <span class="element-tag tag-sky">Habilidades / Core</span>
+                <h2 class="section-title">Especialidades Técnicas</h2>
+                
+                <div class="skills-container">
+                    <div class="skill-category" id="skill-cat-frontend">
+                        <h3 class="skill-title">Frontend</h3>
+                        <div class="skill-pills">
+                            <span class="pill">React / Next.js</span>
+                            <span class="pill">Vue / Nuxt</span>
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">CSS (Grid/Flexbox)</span>
+                            <span class="pill">Tailwind CSS</span>
+                            <span class="pill">WebGL & Three.js</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" id="skill-cat-backend">
+                        <h3 class="skill-title">Backend & Infra</h3>
+                        <div class="skill-pills">
+                            <span class="pill">Node.js / Express</span>
+                            <span class="pill">Python / Django</span>
+                            <span class="pill">GraphQL / REST APIs</span>
+                            <span class="pill">PostgreSQL & Redis</span>
+                            <span class="pill">Docker</span>
+                            <span class="pill">AWS / Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES SECTION (Theme: Amber/Gold Accent) -->
+            <!-- Color-coded in gold/amber to indicate value proposition and services -->
+            <section class="section-block element-services" id="services-section">
+                <span class="element-tag tag-gold">Servicios / Soluciones</span>
+                <h2 class="section-title">¿Qué puedo hacer por ti?</h2>
+                
+                <div class="services-list">
+                    <div class="service-item" id="service-development">
+                        <div class="service-icon icon-dev">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Desarrollo Web Full-Stack</h3>
+                            <p>Creación de aplicaciones web robustas, rápidas, escalables y optimizadas para SEO, desde la base de datos hasta la interfaz de usuario.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item" id="service-uiux">
+                        <div class="service-icon icon-design">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                <path d="M2 12h20"></path>
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Diseño de Experiencia & UI</h3>
+                            <p>Prototipado interactivo, arquitectura de información y diseño de interfaces hermosas que enganchan a los usuarios desde el primer segundo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PORTFOLIO SECTION (Theme: Violet Accent) -->
+            <!-- Color-coded in violet to mark active projects and showcases -->
+            <section class="section-block element-portfolio" id="portfolio-section">
+                <span class="element-tag tag-violet">Portafolio / Proyectos</span>
+                <h2 class="section-title">Proyectos Destacados</h2>
+                
+                <div class="portfolio-grid">
+                    <article class="project-card" id="project-1">
+                        <div class="project-info">
+                            <span class="project-type">SaaS Platform</span>
+                            <h3>Ecosys Dashboard</h3>
+                            <p>Plataforma SaaS para gestión empresarial y análisis en tiempo real de operaciones complejas.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Tailwind</span>
+                                <span>Django</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" id="project-2">
+                        <div class="project-info">
+                            <span class="project-type">E-Commerce</span>
+                            <h3>Minimal Shop</h3>
+                            <p>Tienda virtual minimalista y ultrarrápida con pasarela de pago Stripe integrada al 100%.</p>
+                            <div class="project-tags">
+                                <span>Next.js</span>
+                                <span>Stripe</span>
+                                <span>GraphQL</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CONTACT FORM SECTION (Theme: Coral Accent) -->
+            <!-- Color-coded in coral/ruby to indicate high interaction and call to action -->
+            <section class="section-block element-contact" id="contact-section">
+                <span class="element-tag tag-coral">Contacto / Acción</span>
+                <h2 class="section-title">¡Hablemos de tu proyecto!</h2>
+                
+                <form class="contact-form" id="main-contact-form" onsubmit="return false;">
+                    <div class="form-group" id="form-group-name">
+                        <label for="contact-name">Nombre</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Ej. Juan Pérez" required>
+                    </div>
+
+                    <div class="form-group" id="form-group-email">
+                        <label for="contact-email">Correo Electrónico</label>
+                        <input type="email" id="contact-email" name="email" placeholder="Ej. juan@correo.com" required>
+                    </div>
+
+                    <div class="form-group" id="form-group-message">
+                        <label for="contact-message">Mensaje</label>
+                        <textarea id="contact-message" name="message" rows="4" placeholder="Cuéntame sobre tu idea o proyecto..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="contact-submit-btn">
+                        <span>Enviar Mensaje</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </section>
+
+            <!-- FOOTER INSIDE CARD -->
+            <footer class="card-footer" id="main-footer">
+                <p>&copy; 2026 Thiago. Hecho con ❤️ y CSS Premium.</p>
+                <div class="footer-status">
+                    <span class="status-indicator"></span> SPA Live Mockup
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Script connection (Mock JS with comments as requested) -->
+    <script src="app.js"></script>
+</body>
+</html>
